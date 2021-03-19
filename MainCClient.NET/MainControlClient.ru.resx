@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>IP / Имя компьютера</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="ConnectBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ConnectBtn.Text" xml:space="preserve">
+    <value>Соединиться</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>План облучения</value>
+  </data>
+  <data name="QuitBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="QuitBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>741, 425</value>
+  </data>
+  <data name="QuitBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 23</value>
+  </data>
+  <data name="QuitBtn.Text" xml:space="preserve">
+    <value>Завершить программу</value>
+  </data>
+  <data name="LedImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABs
+        CQAAAk1TRnQBSQFMAgEBBgEAAYgBAAGIAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/AToB1AGUAf8BOQHSAZEB/wE6AdQBlAH/
+        AYIB1QGvAf8sAAHwAdEBkwL/AcwBUgL/AcwBUgL/AcwBUgH/AfAB0QGTAf+oAAGCAdUBrwH/AT4B6QGq
+        Af8BTAH/AewB/wFNAf8B8QH/AUwB/wHsAf8BPgHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAW4D/wHU
+        A/8B3AP/AdQC/wHiAW4B/wHwAdEBkwH/pAABOgHUAZQB/wFLAf8B5AH/AUsB/wHkAf8BSwH/AeQB/wFL
+        Af8B5AH/AUsB/wHkAf8BOgHUAZQB/yQAAf8BzgFUA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAVQB/6QA
+        ATkB0gGRAf8BhAH/AfgB/wFIAf8B1gH/AUgB/wHWAf8BSAH/AdYB/wGEAf8B+AH/ATkB0gGRAf8kAAH/
+        AcwBUgP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAFSAf+kAAE5AdIBkQH/AcwD/wFqAf8B6gH/
+        AWEB/wHjAf8BagH/AeoB/wHMA/8BOQHSAZEB/yQAAf8BzAFSA/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
+        AcwBUgH/pAABkwHmAcAB/wFQAe8BswH/AdsD/wHiA/8B2wP/AVAB7wGzAf8BkwHmAcAB/yQAAf8B4wGk
+        Av8B4gFuA/8B5QP/AekD/wHlAv8B4AFrAv8B4wGkAf+oAAGTAeYBwAH/ATkB0gGRAf8BOQHSAY8B/wE5
+        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBUgL/AcwBUgL/AcwBUgL/AeMBpAH//wD/AP8A/wD/AP8A
+        /wD/ALQAAxYBHgMjATMDIwEzAyMBMwMWAR4sAAMWAR4DIwEzAyMBMwMjATMDFgEeLAADFgEeAyMBMwMj
+        ATMDIwEzAxYBHmgAAxYBHgNUAawBJAE7AcsB/wEjAToBygH/ASQBOwHLAf8DVAGsAxYBHiQAAxYBHgFT
+        AlQBrAEAAYoBOgH/AQABiQE5Af8BAAGKAToB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQkB/wG2
+        AYIBCAH/AbcBgwEJAf8CVAFTAawDFgEeKAABtAG+Av8BkQGgAv8BkQGgAv8BkQGgAv8BtAG+Av8oAANU
+        AawBMgFKAdkB/wFfAYgC/wFjAYwC/wFfAYgC/wEyAUoB2QH/A1QBrCQAAVMCVAGsAQABmwFMAf8BAAHO
+        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbAUwB/wFTAlQBrCQAAlQBUwGsAcUBkgEfAf8B7QHAAWQB/wHx
+        AcQBagH/Ae0BwAFkAf8BxQGSAR8B/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
+        AZIBqAL/AbQBvgL/JAABJQE7AcsB/wFPAWwC/wFQAWwC/wFPAWsB/QH/AVABbAL/AU8BbAL/ASUBOwHL
+        Af8lAAGKAToB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKAToB/yQA
+        AbcBhAEKAf8B6gG0AUwB/wHpAbQBTAH/AegBswFLAf8B6QG0AUwB/wHqAbQBTAH/AbcBhAEKAf8kAAGR
+        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAASMBOgHLAf8BXQGIAv8BPQFd
+        AfsB/wE9AV0B+gH/AT0BXQH7Af8BXQGIAv8BIwE6AcsB/yUAAYkBOAH/ARUBzwGZAf8BAAHAAW8B/wEA
+        Ab4BbgH/AQABwAFvAf8BFQHPAZkB/wEAAYkBOAH/JAABtwGCAQkB/wHrAbkBVAH/AeMBpgExAf8B4wGm
+        ATEB/wHjAaYBMQH/AesBuQFUAf8BtwGCAQkB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
+        AaUBvQL/AZEBoAL/JAABIwE6AcwB/wGQAaUB/QH/AUoBaQH6Af8BRQFjAfkB/wFKAWkB+gH/AZABpQH9
+        Af8BIwE6AcwB/yUAAYoBOQH/AVYB2gG0Af8BDgHGAY4B/wEGAcMBiAH/AQ4BxgGOAf8BVgHaAbQB/wEA
+        AYoBOQH/JAABtwGDAQkB/wHuAcYBhAH/AeUBqgE5Af8B4gGmATEB/wHlAaoBOQH/Ae4BxgGEAf8BtwGD
+        AQkB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXATUBTQHb
+        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ATQBTQHbAf8DTwGXJAABTgJPAZcBAAGfAVMB/wFkAdoBtwH/
+        AWoB3gG9Af8BZAHaAbcB/wEAAZ8BUwH/AU4CTwGXJAACTwFOAZcBxgGSAR4B/wHsAcQBggH/Ae8ByAGG
+        Af8B7AHEAYIB/wHGAZEBHAH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
+        Av8BvQHHAv8oAANPAZcBIgE5AcwB/wEhATgBywH/ASIBOQHMAf8DTwGXLAABTgJPAZcBAAGKATgB/wEA
+        AYkBNgH/AQABigE4Af8BTgJPAZcsAAJPAU4BlwG3AYMBCQH/AbYBggEHAf8BtwGDAQkB/wJPAU4BlywA
+        Ab0BxwL/AZEBoAL/AZEBoAL/AZEBoAL/Ab0BxwL//wD/AP8A/wAYAAFCAU0BPgcAAT4DAAEoAwABQAMA
+        ASADAAEBAQABAQYAAQEWAAP/AQAE/wQABP8EAAT/BAAE/wQABP8EAAH8AR8B/AEfBAAB+AEPAfgBDwQA
+        AfgBDwH4AQ8EAAH4AQ8B+AEPBAAB+AEPAfgBDwQAAfgBDwH4AQ8EAAH8AR8B/AEfBAAE/wQABP8EAAT/
+        BAAE/wQAIP8B/AEfAfwBHwH8AR8C/wH4AQ8B+AEPAfgBDwH8AR8B+AEPAfgBDwH4AQ8B+AEPAfgBDwH4
+        AQ8B+AEPAfgBDwH4AQ8B+AEPAfgBDwH4AQ8B+AEPAfgBDwH4AQ8B+AEPAfgBDwH4AQ8B+AEPAfgBDwH8
+        AR8B/AEfAfwBHwH8AR8g/ws=
+</value>
+  </data>
+  <data name="LoadPlanBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LoadPlanBtn.Text" xml:space="preserve">
+    <value>Загрузить план</value>
+  </data>
+  <data name="ClearPlanBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ClearPlanBtn.Text" xml:space="preserve">
+    <value>Очистить план</value>
+  </data>
+  <data name="GetStateBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="GetStateBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 100</value>
+  </data>
+  <data name="GetStateBtn.Text" xml:space="preserve">
+    <value>Статус сервера</value>
+  </data>
+  <data name="SendDataBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SendDataBtn.Text" xml:space="preserve">
+    <value>Послать на сервер</value>
+  </data>
+  <data name="StartPlanBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="StartPlanBtn.Text" xml:space="preserve">
+    <value>Запуск</value>
+  </data>
+  <data name="PausePlanBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="PausePlanBtn.Text" xml:space="preserve">
+    <value>Пауза </value>
+  </data>
+  <data name="StopPlanBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="StopPlanBtn.Text" xml:space="preserve">
+    <value>Остановка</value>
+  </data>
+  <data name="ClearLogBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ClearLogBtn.Text" xml:space="preserve">
+    <value>Очистить журнал</value>
+  </data>
+  <data name="LedFinish.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LedFinish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="LedFinish.Text" xml:space="preserve">
+    <value>     Закончился</value>
+  </data>
+  <data name="LedPause.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LedPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="LedPause.Text" xml:space="preserve">
+    <value>     Пауза</value>
+  </data>
+  <data name="LedProcess.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LedProcess.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="LedProcess.Text" xml:space="preserve">
+    <value>     В процессе </value>
+  </data>
+  <data name="LedReady.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LedReady.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="LedReady.Text" xml:space="preserve">
+    <value>     Готов</value>
+  </data>
+  <data name="LedNotReady.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LedNotReady.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="LedNotReady.Text" xml:space="preserve">
+    <value>     Не готов</value>
+  </data>
+  <data name="LedConnect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NumberLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>830, 46</value>
+  </data>
+  <data name="NumberLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="NumberLbl.Text" xml:space="preserve">
+    <value>             </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Контроллер плана облучения</value>
+  </data>
+</root>
