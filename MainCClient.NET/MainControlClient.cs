@@ -44,7 +44,7 @@ namespace MainCClient.NET
       /// <summary>
       ///    The plan data
       /// </summary>
-      public Dictionary<int, PlanSpot> PlanData;
+      public List<PlanSpot> PlanData;
 
       /// <summary>
       ///    The plan file
@@ -103,13 +103,15 @@ namespace MainCClient.NET
       ///    Shows the plan.
       /// </summary>
       /// <param name="plan">The plan.</param>
-      public void ShowPlan(Dictionary<int, PlanSpot> plan)
+      public void ShowPlan(List<PlanSpot> plan)
       {
          try {
             foreach (var spot in plan) {
                var row = new[] {
-                  spot.Value.id.ToString(), spot.Value.xangle.ToString(), spot.Value.zangle.ToString(CultureInfo.InvariantCulture), spot.Value.energy.ToString(CultureInfo.InvariantCulture),
-                  spot.Value.pcount.ToString(CultureInfo.InvariantCulture), "", "0", "0", "0"
+                  spot.id.ToString(), spot.xangle.ToString(), 
+                  spot.zangle.ToString(CultureInfo.InvariantCulture), 
+                  spot.energy.ToString(CultureInfo.InvariantCulture),
+                  spot.pcount.ToString(CultureInfo.InvariantCulture), "", "0", "0", "0"
                };
                TableGrid.Rows.Add(row);
             }
@@ -405,7 +407,7 @@ namespace MainCClient.NET
       ///    Called when plan was processed. Show plan results in the table.
       /// </summary>
       /// <param name="results">The results.</param>
-      private void OnPlanResults(Dictionary<int, PlanSpotResult> results)
+      private void OnPlanResults(List<PlanSpotResult> results)
       {
          UpdatePlanTable(results);
       }
@@ -571,12 +573,12 @@ namespace MainCClient.NET
       ///    Updates the plan table.
       /// </summary>
       /// <param name="results">The results.</param>
-      private void UpdatePlanTable(Dictionary<int, PlanSpotResult> results)
+      private void UpdatePlanTable(List<PlanSpotResult> results)
       {
          var rows = TableGrid.Rows;
 
          foreach (var spot in results) {
-            var id = spot.Value.id;
+            var id = spot.id;
             var rowIndex = GetRowById(id);
             if (rowIndex < 0) {
                continue;
@@ -584,10 +586,10 @@ namespace MainCClient.NET
 
             var row = rows[rowIndex];
             row.Cells[5].Value = "OK";
-            row.Cells[6].Value = spot.Value.result_xangle.ToString();
-            row.Cells[7].Value = spot.Value.result_zangle.ToString();
-            row.Cells[8].Value = spot.Value.result_pcount.ToString();
-            row.Cells[8].Value = spot.Value.result_pcount.ToString();
+            row.Cells[6].Value = spot.result_xangle.ToString();
+            row.Cells[7].Value = spot.result_zangle.ToString();
+            row.Cells[8].Value = spot.result_pcount.ToString();
+            row.Cells[8].Value = spot.result_pcount.ToString();
          }
       }
 
