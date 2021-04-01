@@ -83,9 +83,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TMClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TM\Redist\TMClient.dll</HintPath>
+    <Reference Include="TM">
+      <HintPath>.\TM.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +111,7 @@
     <Content Include="test_plan.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TM.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
