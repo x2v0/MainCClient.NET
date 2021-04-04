@@ -10,6 +10,8 @@ using System.Configuration;
 using System.Globalization;
 using System.Windows.Forms;
 using TM;
+using TMPlan;
+using TMSrv;
 
 namespace MainCClient.NET
 {
@@ -44,7 +46,7 @@ namespace MainCClient.NET
       /// <summary>
       ///    The plan data
       /// </summary>
-      public List<PlanSpot> PlanData;
+      public List<TMPlan.Spot> PlanData;
 
       /// <summary>
       ///    The plan file
@@ -69,7 +71,7 @@ namespace MainCClient.NET
       ///    Gets the client.
       /// </summary>
       /// <value>The client.</value>
-      public TMClient Client
+      public PlanClient Client
       {
          get;
          private set;
@@ -103,7 +105,7 @@ namespace MainCClient.NET
       ///    Shows the plan.
       /// </summary>
       /// <param name="plan">The plan.</param>
-      public void ShowPlan(List<PlanSpot> plan)
+      public void ShowPlan(List<Spot> plan)
       {
          try {
             foreach (var spot in plan) {
@@ -167,15 +169,13 @@ namespace MainCClient.NET
       private void ClearPlanBtn_Click(object sender, EventArgs e)
       {
          TableGrid.Rows.Clear();
-         //PlanData = null;
          PlanLoaded = false;
 
          if (!IsConnected) {
             Console.WriteLine("Not connected");
-            return;
          }
 
-         Client.SendCommand(EPlanCommand.CLEARPLAN);
+         Client.Clear();
       }
 
       /// <summary>
@@ -311,12 +311,12 @@ namespace MainCClient.NET
          fConsoleWriter.WriteLineEvent += ConsoleWriter_WriteLineEvent;
          Console.SetOut(fConsoleWriter);
 
-         Client = new TMClient();
+         Client = new PlanClient();
 
          Client.ServerStateChanged += OnStateChanged;
          Client.DataBlockReceived += OnDataBlockReceived;
          Client.ServerDisconnected += OnDisconnected;
-         Client.PlanResultsProcessed += OnPlanResults;
+         Client.PlanResultsProcessed += UpdatePlanTable;
       }
 
       /// <summary>
@@ -338,7 +338,7 @@ namespace MainCClient.NET
          PlanFile = fd.FileName;
 
          try {
-            PlanData = TMClient.LoadPlanData(PlanFile);
+            PlanData = Client.Load(PlanFile);
          } catch {
             PlanLoaded = false;
             return;
@@ -368,6 +368,7 @@ namespace MainCClient.NET
       private void OnDataBlockReceived(BufferChunk data, int bytesRead)
       {
          //Client.DumpDataBlock(data, bytesRead);
+         var l = bytesRead;
       }
 
       /// <summary>
@@ -403,15 +404,6 @@ namespace MainCClient.NET
          }
       }
 
-      /// <summary>
-      ///    Called when plan was processed. Show plan results in the table.
-      /// </summary>
-      /// <param name="results">The results.</param>
-      private void OnPlanResults(List<PlanSpotResult> results)
-      {
-         UpdatePlanTable(results);
-      }
-
       private void OnQuitClick(object sender, EventArgs e)
       {
          Quit();
@@ -420,15 +412,17 @@ namespace MainCClient.NET
       /// <summary>
       ///    Called when [state changed].
       /// </summary>
-      /// <param name="state">The state.</param>
-      private void OnStateChanged(ECommandState state)
+      /// <param name="data">The state data.</param>
+      private void OnStateChanged(StateData data)
       {
-         if (state != ECommandState.INPROCESS) {
+         var state = (EPlanState)data.state;
+
+         if (state != EPlanState.INPROCESS) {
             Console.WriteLine(state);
          }
 
          switch (state) {
-            case ECommandState.NOTREADY:
+            case EPlanState.NOTREADY:
                LedNotReady.ImageIndex = 2;
                LedReady.ImageIndex = 0;
                LedProcess.ImageIndex = 0;
@@ -436,7 +430,7 @@ namespace MainCClient.NET
                LedFinish.ImageIndex = 0;
 
                break;
-            case ECommandState.READY:
+            case EPlanState.READY:
                LedNotReady.ImageIndex = 0;
                LedReady.ImageIndex = 0;
                LedProcess.ImageIndex = 0;
@@ -444,7 +438,7 @@ namespace MainCClient.NET
                LedFinish.ImageIndex = 0;
                LedReady.ImageIndex = 1;
                break;
-            case ECommandState.INPROCESS:
+            case EPlanState.INPROCESS:
                LedNotReady.ImageIndex = 0;
                LedReady.ImageIndex = 0;
                LedPause.ImageIndex = 0;
@@ -452,7 +446,7 @@ namespace MainCClient.NET
                LedProcess.ImageIndex = 1;
                UpdateNumberLabel(Client.SpotsPassed, Client.SpotsTotal);
                break;
-            case ECommandState.PAUSED:
+            case EPlanState.PAUSED:
                LedNotReady.ImageIndex = 0;
                LedReady.ImageIndex = 0;
                LedProcess.ImageIndex = 0;
@@ -460,7 +454,7 @@ namespace MainCClient.NET
                LedPause.ImageIndex = 1;
 
                break;
-            case ECommandState.FINISHED:
+            case EPlanState.FINISHED:
                LedNotReady.ImageIndex = 0;
                LedReady.ImageIndex = 0;
                LedProcess.ImageIndex = 0;
@@ -486,7 +480,7 @@ namespace MainCClient.NET
          Client.ServerStateChanged -= OnStateChanged;
          Client.DataBlockReceived -= OnDataBlockReceived;
          Client.ServerDisconnected -= OnDisconnected;
-         Client.PlanResultsProcessed -= OnPlanResults;
+         Client.PlanResultsProcessed -= UpdatePlanTable;
          Client = null;
          Environment.Exit(1);
       }
@@ -523,7 +517,7 @@ namespace MainCClient.NET
       private void SendPlan(uint nblocks = 10)
       {
          try {
-            TMClient.SendPlan(Client, PlanData, nblocks);
+            Client.Send(PlanData, nblocks);
          } catch (Exception ex) {
             //
          }
@@ -573,7 +567,7 @@ namespace MainCClient.NET
       ///    Updates the plan table.
       /// </summary>
       /// <param name="results">The results.</param>
-      private void UpdatePlanTable(List<PlanSpotResult> results)
+      private void UpdatePlanTable(List<SpotResult> results)
       {
          var rows = TableGrid.Rows;
 
