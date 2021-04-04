@@ -206,7 +206,7 @@ namespace MainCClient.NET
             LedConnect.ImageIndex = 1;
             ConnectBtn.Text = Program.Language == "ru" ? "Отсоединиться" : "Disconnect";
 
-            Client.SendInfo("I'm MainCClient test client for MainC");
+            Client.SendInfo("I'm test client for MainC");
             Client.SendCommand(EPlanCommand.GETSTATE);
             //Client.SendCommand(EPlanCommand.CLEARPLAN);
          } else {
