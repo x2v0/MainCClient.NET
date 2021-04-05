@@ -75,16 +75,6 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      ///    Gets a value indicating whether this <see cref="MainControlClient" /> is connected.
-      /// </summary>
-      /// <value><c>true</c> if connected; otherwise, <c>false</c>.</value>
-      public bool IsConnected
-      {
-         get;
-         private set;
-      }
-
-      /// <summary>
       ///    Gets or sets a value indicating whether [plan loaded].
       /// </summary>
       /// <value><c>true</c> if [plan loaded]; otherwise, <c>false</c>.</value>
@@ -92,6 +82,22 @@ namespace MainCClient.NET
       {
          get;
          set;
+      }
+
+      public bool IsConnected
+      {
+         get
+         {
+            return Client != null && Client.IsConnected;
+         }
+      }
+
+      public bool IsProcessing
+      {
+         get
+         {
+            return Client != null && Client.SpotsPassed < Client.SpotsTotal;
+         }
       }
 
       #endregion
@@ -144,7 +150,6 @@ namespace MainCClient.NET
             MessagesLB.Items.Add(txt);
             MessagesLB.SelectedIndex = MessagesLB.Items.Count - 1;
          }
-         
       }
 
       /// <summary>
@@ -164,9 +169,7 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void ClearPlanBtn_Click(object sender, EventArgs e)
       {
-         TableGrid.Rows.Clear();
-         PlanLoaded = false;
-
+        
          if (!IsConnected) {
             Console.WriteLine("Server is not connected");
             return;
@@ -175,8 +178,11 @@ namespace MainCClient.NET
          var ok = Client.Clear();
 
          if (ok) {
-            Console.WriteLine("Plan cleared");
+            Console.WriteLine("Clear request sent to server");
          }
+
+         TableGrid.Rows.Clear();
+         PlanLoaded = false;
       }
 
       /// <summary>
@@ -187,7 +193,7 @@ namespace MainCClient.NET
       private void ConnectBtn_Click(object sender, EventArgs e)
       {
          if (IsConnected) {
-            IsConnected = !Client.Disconnect();
+            Client.Disconnect();
             LedConnect.ImageIndex = 0;
             ConnectBtn.Text = Program.Language == "ru" ? "Соединиться" : "Connect";
             return;
@@ -201,7 +207,7 @@ namespace MainCClient.NET
             Port = Globals.Port;
          }
 
-         IsConnected = Client.Connect(IPaddress, Port);
+         Client.Connect(IPaddress, Port);
          var msg = "Server = " + IPaddress + " Port = " + Port;
 
          if (IsConnected) {
@@ -272,7 +278,7 @@ namespace MainCClient.NET
       private void GetStateBtn_Click(object sender, EventArgs e)
       {
          if (!IsConnected) {
-            Console.WriteLine("Not connected");
+            Console.WriteLine("Server is not connected");
             return;
          }
 
@@ -439,10 +445,15 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void PausePlanBtn_Click(object sender, EventArgs e)
       {
+         if (!IsConnected) {
+            Console.WriteLine("Server is not connected");
+            return;
+         }
+
          var ok = Client.Pause();
 
          if (ok) {
-            Console.WriteLine("Plan paused");
+            Console.WriteLine("Pause request sent to serverd");
          }
       }
 
@@ -482,19 +493,20 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void SendDataBtn_Click(object sender, EventArgs e)
       {
-         SendPlan();
-      }
+         if (!IsConnected) {
+            Console.WriteLine("Server is not connected");
+            return;
+         }
 
-      /// <summary>
-      ///    Sends the plan to server.
-      /// </summary>
-      /// <param name="nblocks">The nblocks.</param>
-      private void SendPlan(uint nblocks = 10)
-      {
-         var ok = Client.Send(PlanData, nblocks);
+         if (IsProcessing) {
+            Console.WriteLine("Plan processing is ON");
+            return;
+         }
+
+         var ok = Client.Send(PlanData, 10);
 
          if (ok) {
-            Console.WriteLine("Plan sent to server.");
+            Console.WriteLine("Plan data sent to server.");
          }
       }
 
@@ -505,9 +517,14 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void StartPlanBtn_Click(object sender, EventArgs e)
       {
+         if (!IsConnected) {
+            Console.WriteLine("Server is not connected");
+            return;
+         }
+
          var ok = Client.Start();
          if (ok) {
-            Console.WriteLine("Plan started");
+            Console.WriteLine("Start request sent to server");
          }
       }
 
@@ -518,28 +535,16 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void StopPlanBtn_Click(object sender, EventArgs e)
       {
+         if (!IsConnected) {
+            Console.WriteLine("Server is not connected");
+            return;
+         }
+
          var ok = Client.Stop();
 
          if (ok) {
-            Console.WriteLine("Plan stopped");
+            Console.WriteLine("Stop request sent to server");
          }
-      }
-
-      /// <summary>
-      ///    Updates the number label.
-      /// </summary>
-      /// <param name="processed">The processed.</param>
-      /// <param name="total">The total.</param>
-      private void UpdateNumberLabel(uint processed, uint total)
-      {
-         //var txt = processed + "/" + total;
-         NumberLbl.Invk(t => t.Text = processed + "/" + total);
-
-         /*if (NumberLbl.InvokeRequired) {
-            NumberLbl.Invoke((MethodInvoker) delegate { NumberLbl.Text = txt; });
-         } else {
-            NumberLbl.Text = txt;
-         }*/
       }
 
       /// <summary>

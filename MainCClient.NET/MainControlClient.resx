@@ -167,6 +167,9 @@
   <data name="&gt;&gt;StopPlanBtn.Name" xml:space="preserve">
     <value>StopPlanBtn</value>
   </data>
+  <data name="ClearPlanBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
   <data name="&gt;&gt;Emev.Name" xml:space="preserve">
     <value>Emev</value>
   </data>
@@ -212,9 +215,6 @@
   <data name="&gt;&gt;LedConnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="LedPause.Text" xml:space="preserve">
-    <value>     Pause</value>
-  </data>
   <data name="LedPause.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
   </data>
@@ -227,8 +227,8 @@
   <data name="NumberLbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 13</value>
   </data>
-  <data name="StopPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 355</value>
+  <data name="LedProcess.Location" type="System.Drawing.Point, System.Drawing">
+    <value>748, 46</value>
   </data>
   <data name="LedConnect.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -239,17 +239,11 @@
   <data name="&gt;&gt;LedPause.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ResultZ.Name" xml:space="preserve">
-    <value>ResultZ</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MainControl Client</value>
   </data>
-  <data name="&gt;&gt;Result.Type" xml:space="preserve">
+  <data name="&gt;&gt;Emev.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SendDataBtn.Text" xml:space="preserve">
-    <value>Send to Server</value>
   </data>
   <data name="ClearLogBtn.Text" xml:space="preserve">
     <value>Clear Log</value>
@@ -260,8 +254,8 @@
   <data name="&gt;&gt;ResultZ.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>23</value>
+  <data name="SendDataBtn.Text" xml:space="preserve">
+    <value>Send to Server</value>
   </data>
   <data name="Xangle.Width" type="System.Int32, mscorlib">
     <value>70</value>
@@ -284,6 +278,9 @@
   <data name="&gt;&gt;MessagesLB.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="LedFinish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -292,6 +289,9 @@
   </data>
   <data name="&gt;&gt;PausePlanBtn.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -323,9 +323,6 @@
   <data name="&gt;&gt;MessagesLB.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="StopPlanBtn.Text" xml:space="preserve">
-    <value>Stop Plan</value>
-  </data>
   <data name="&gt;&gt;LoadPlanBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -347,8 +344,11 @@
   <data name="NumberLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>811, 46</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>21</value>
+  <data name="&gt;&gt;Yangle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LedConnect.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;LedConnect.ZOrder" xml:space="preserve">
     <value>15</value>
@@ -371,11 +371,17 @@
   <data name="PortNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
   </data>
-  <data name="&gt;&gt;Emev.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LedPause.Text" xml:space="preserve">
+    <value>     Pause</value>
   </data>
   <data name="ConnectBtn.Text" xml:space="preserve">
     <value>Connect</value>
+  </data>
+  <data name="MessagesLB.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ClearPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 180</value>
   </data>
   <data name="LedFinish.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -386,14 +392,17 @@
   <data name="MessagesLB.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 415</value>
   </data>
-  <data name="&gt;&gt;QuitBtn.Name" xml:space="preserve">
-    <value>QuitBtn</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LedPause.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;NumberLbl.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="&gt;&gt;PausePlanBtn.Name" xml:space="preserve">
+    <value>PausePlanBtn</value>
   </data>
   <data name="LedReady.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -419,15 +428,11 @@
   <data name="&gt;&gt;LedProcess.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;QuitBtn.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LedNotReady.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
   <data name="StartPlanBtn.Text" xml:space="preserve">
     <value>Start Plan</value>
+  </data>
+  <data name="StartPlanBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
   <data name="StopPlanBtn.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -446,6 +451,9 @@
   </data>
   <data name="&gt;&gt;ClearPlanBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;QuitBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -474,8 +482,8 @@
   <data name="LedNotReady.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="LedConnect.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;SrvName.ZOrder" xml:space="preserve">
     <value>22</value>
@@ -498,14 +506,14 @@
   <data name="MessagesLB.Size" type="System.Drawing.Size, System.Drawing">
     <value>899, 121</value>
   </data>
-  <data name="&gt;&gt;Yangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="LoadPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 151</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;LedConnect.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;Xangle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SrvName.Text" xml:space="preserve">
     <value>localhost</value>
@@ -524,9 +532,6 @@
   </data>
   <data name="TableGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>744, 352</value>
-  </data>
-  <data name="LedProcess.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 46</value>
   </data>
   <data name="&gt;&gt;LedNotReady.ZOrder" xml:space="preserve">
     <value>14</value>
@@ -564,6 +569,12 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
+  <data name="&gt;&gt;ClearLogBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="StopPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 355</value>
+  </data>
   <data name="LedNotReady.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -585,11 +596,11 @@
   <data name="Intensity.Width" type="System.Int32, mscorlib">
     <value>90</value>
   </data>
-  <data name="&gt;&gt;ResultX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;QuitBtn.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
-  <data name="&gt;&gt;ClearLogBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 41</value>
   </data>
   <data name="ClearLogBtn.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -597,8 +608,8 @@
   <data name="&gt;&gt;PausePlanBtn.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="StartPlanBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="&gt;&gt;ResultZ.Name" xml:space="preserve">
+    <value>ResultZ</value>
   </data>
   <data name="&gt;&gt;ClearLogBtn.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -606,8 +617,8 @@
   <data name="&gt;&gt;GetStateBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NumberLbl.Text" xml:space="preserve">
-    <value>                       </value>
+  <data name="&gt;&gt;ResultX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LoadPlanBtn.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -627,14 +638,14 @@
   <data name="ResultZ.Width" type="System.Int32, mscorlib">
     <value>90</value>
   </data>
-  <data name="LoadPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 151</value>
-  </data>
   <data name="SendDataBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>754, 209</value>
   </data>
   <data name="&gt;&gt;TableGrid.Name" xml:space="preserve">
     <value>TableGrid</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -642,8 +653,8 @@
   <data name="StartPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>754, 297</value>
   </data>
-  <data name="ClearPlanBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -699,9 +710,6 @@
   <data name="&gt;&gt;StartPlanBtn.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Xangle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ResultIntensity.Name" xml:space="preserve">
     <value>ResultIntensity</value>
   </data>
@@ -714,8 +722,9 @@
   <data name="GetStateBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 23</value>
   </data>
-  <data name="ClearPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 180</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LedNotReady.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
   <data name="LedPause.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -723,7 +732,7 @@
   <data name="LedPause.Location" type="System.Drawing.Point, System.Drawing">
     <value>748, 62</value>
   </data>
-  <data name="&gt;&gt;LedPause.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LedFinish.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ConnectBtn.Parent" xml:space="preserve">
@@ -734,7 +743,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABu
-        CQAAAk1TRnQBSQFMAgEBBgEAAbABAAG4AQABEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
+        CQAAAk1TRnQBSQFMAgEBBgEAAbABAAHAAQABEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/ATwB1AGUAf8BOwHSAZEB/wE8AdQBlAH/
         AYIB1QGvAf8sAAHwAdEBkwL/AcwBVAL/AcwBVAL/AcwBVAH/AfAB0QGTAf+oAAGCAdUBrwH/AUAB6QGq
         Af8BTgH/AewB/wFPAf8B8QH/AU4B/wHsAf8BQAHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAXAD/wHU
@@ -789,9 +798,6 @@
   <data name="LedFinish.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;ClearPlanBtn.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;Intensity.Name" xml:space="preserve">
     <value>Intensity</value>
   </data>
@@ -803,6 +809,9 @@
   </data>
   <data name="&gt;&gt;Xangle.Name" xml:space="preserve">
     <value>Xangle</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>23</value>
   </data>
   <data name="LedReady.Text" xml:space="preserve">
     <value>     Ready</value>
@@ -819,8 +828,8 @@
   <data name="&gt;&gt;Result.Name" xml:space="preserve">
     <value>Result</value>
   </data>
-  <data name="&gt;&gt;LedFinish.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;StopPlanBtn.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;LedNotReady.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -840,8 +849,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>899, 536</value>
   </data>
-  <data name="&gt;&gt;PausePlanBtn.Name" xml:space="preserve">
-    <value>PausePlanBtn</value>
+  <data name="&gt;&gt;Result.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LedNotReady.Parent" xml:space="preserve">
     <value>$this</value>
@@ -858,17 +867,20 @@
   <data name="&gt;&gt;LedReady.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="ConnectBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;SendDataBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LedPause.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;NumberLbl.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 41</value>
+  <data name="&gt;&gt;ClearPlanBtn.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;PortNum.Name" xml:space="preserve">
     <value>PortNum</value>
@@ -882,9 +894,6 @@
   <data name="&gt;&gt;LedReady.Name" xml:space="preserve">
     <value>LedReady</value>
   </data>
-  <data name="ConnectBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="PausePlanBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>754, 326</value>
   </data>
@@ -897,14 +906,14 @@
   <data name="&gt;&gt;Intensity.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;StopPlanBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="StopPlanBtn.Text" xml:space="preserve">
+    <value>Stop Plan</value>
   </data>
   <data name="&gt;&gt;TableGrid.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="MessagesLB.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;QuitBtn.Name" xml:space="preserve">
+    <value>QuitBtn</value>
   </data>
   <data name="&gt;&gt;MessagesLB.ZOrder" xml:space="preserve">
     <value>17</value>
@@ -915,14 +924,11 @@
   <data name="&gt;&gt;LedPause.Name" xml:space="preserve">
     <value>LedPause</value>
   </data>
-  <data name="LedFinish.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+  <data name="NumberLbl.Text" xml:space="preserve">
+    <value>                       </value>
   </data>
-  <data name="LedPause.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
+  <data name="LedConnect.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;ResultIntensity.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -939,49 +945,43 @@
   <data name="LoadPlanBtn.Text" xml:space="preserve">
     <value>Load Plan</value>
   </data>
-  <data name="Yangle.UserAddedColumn" type="System.Boolean, mscorlib">
+  <metadata name="Yangle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="Emev.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="Emev.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="LedImages.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  </metadata>
+  <metadata name="LedImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
-  <data name="ResultX.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="ResultX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="ResultIntensity.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="ResultIntensity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="ResultZ.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="ResultZ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="Xangle.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="Xangle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="Intensity.UserAddedColumn" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>33</value>
-  </data>
-  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
+  </metadata>
+  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>
-  </data>
-  <data name="Result.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="Result.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="Id.UserAddedColumn" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="Intensity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="Connect" xml:space="preserve">
-    <value>Connect</value>
-  </data>
-  <data name="Disconnect" xml:space="preserve">
-     <value>Disconnect</value>
-  </data>
+  </metadata>
 </root>
