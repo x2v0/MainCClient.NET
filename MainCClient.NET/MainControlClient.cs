@@ -68,9 +68,9 @@ namespace MainCClient.NET
       #region Public properties
 
       /// <summary>
-      ///    Gets the client.
+      ///    The plan client.
       /// </summary>
-      /// <value>The client.</value>
+      /// <value>The PlanClient.</value>
       public PlanClient Client
       {
          get;
@@ -110,8 +110,12 @@ namespace MainCClient.NET
          try {
             foreach (var spot in plan) {
                var row = new[] {
-                  spot.id.ToString(), spot.xangle.ToString(), spot.zangle.ToString(CultureInfo.InvariantCulture), spot.energy.ToString(CultureInfo.InvariantCulture),
-                  spot.pcount.ToString(CultureInfo.InvariantCulture), "", "0", "0", "0"
+                  spot.id.ToString(), 
+                  spot.xangle.ToString(), 
+                  spot.zangle.ToString(), 
+                  spot.energy.ToString(),
+                  spot.pcount.ToString(), 
+                  "", "0", "0", "0"
                };
                TableGrid.Rows.Add(row);
             }
@@ -130,23 +134,20 @@ namespace MainCClient.NET
       /// <param name="txt">The text.</param>
       private void AddMessage(string txt)
       {
-         try {
-            if (InvokeRequired) {
-               txt = txt.Replace("\r\n", "");
-               txt = txt.Replace("\0", "0");
+         txt = txt.Replace("\r\n", "");
+         txt = txt.Replace("\0", "0");
 
-               MessagesLB.Invoke((MethodInvoker) delegate
-               {
-                  MessagesLB.Items.Add(txt);
-                  MessagesLB.SelectedIndex = MessagesLB.Items.Count - 1;
-               });
-            } else {
+         if (InvokeRequired) {
+            MessagesLB.Invoke((MethodInvoker) delegate
+            {
                MessagesLB.Items.Add(txt);
                MessagesLB.SelectedIndex = MessagesLB.Items.Count - 1;
-            }
-         } catch (Exception ex) {
-            // ignored
+            });
+         } else {
+            MessagesLB.Items.Add(txt);
+            MessagesLB.SelectedIndex = MessagesLB.Items.Count - 1;
          }
+         
       }
 
       /// <summary>
@@ -222,35 +223,11 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      ///    Connects to server.
-      /// </summary>
-      /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-      private bool ConnectToServer()
-      {
-         IPaddress = SrvName.Text;
-
-         try {
-            Port = decimal.ToInt32(PortNum.Value);
-         } catch (Exception ex) {
-            Port = Globals.Port;
-         }
-
-         IsConnected = Client.Connect(IPaddress, Port);
-
-         if (IsConnected) {
-            LedConnect.ImageIndex = 1;
-            ConnectBtn.Text = Program.Language == "ru" ? "Отсоединиться" : "Disconnect";
-         }
-
-         return IsConnected;
-      }
-
-      /// <summary>
       ///    Handles the WriteEvent event of the ConsoleWriter control.
       /// </summary>
       /// <param name="sender">The source of the event.</param>
       /// <param name="e">The <see cref="ConsoleWriterEventArgs" /> instance containing the event data.</param>
-      private void ConsoleWriter_WriteEvent(object sender, ConsoleWriterEventArgs e)
+      private void OnConsoleWrite(object sender, ConsoleWriterEventArgs e)
       {
          var txt = "\t" + DateTime.Now + " ::  " + e.Value;
          AddMessage(txt);
@@ -261,7 +238,7 @@ namespace MainCClient.NET
       /// </summary>
       /// <param name="sender">The source of the event.</param>
       /// <param name="e">The <see cref="ConsoleWriterEventArgs" /> instance containing the event data.</param>
-      private void ConsoleWriter_WriteLineEvent(object sender, ConsoleWriterEventArgs e)
+      private void OnConsoleWriteLine(object sender, ConsoleWriterEventArgs e)
       {
          var txt = "\t" + DateTime.Now + " ::  " + e.Value;
          AddMessage(txt);
@@ -302,8 +279,15 @@ namespace MainCClient.NET
             return;
          }
 
-         Client.ReadData = null;
-         Client.SendCommand(EPlanCommand.GETSTATE);
+         Client.AskServerState();
+      }
+
+      private void SetConsoleOutput()
+      {
+         fConsoleWriter = new ConsoleWriter();
+         fConsoleWriter.WriteEvent += OnConsoleWrite;
+         fConsoleWriter.WriteLineEvent += OnConsoleWriteLine;
+         Console.SetOut(fConsoleWriter);
       }
 
       /// <summary>
@@ -311,11 +295,7 @@ namespace MainCClient.NET
       /// </summary>
       private void Init()
       {
-         fConsoleWriter = new ConsoleWriter();
-         fConsoleWriter.WriteEvent += ConsoleWriter_WriteEvent;
-         fConsoleWriter.WriteLineEvent += ConsoleWriter_WriteLineEvent;
-         Console.SetOut(fConsoleWriter);
-
+         SetConsoleOutput();
          Client = new PlanClient();
 
          Client.ServerStateChanged += OnStateChanged;
@@ -350,7 +330,7 @@ namespace MainCClient.NET
 
          PlanLoaded = true;
          ShowPlan(PlanData);
-         Console.WriteLine("PlanData loaded. Entries = " + PlanData.Count);
+         Console.WriteLine("Plan loaded. Entries = " + PlanData.Count);
       }
 
       /// <summary>
@@ -366,8 +346,6 @@ namespace MainCClient.NET
       /// <summary>
       ///    Called when [disconnected].
       /// </summary>
-      /// <param name="data">The data.</param>
-      /// <param name="bytesread">The bytesread.</param>
       private void OnDisconnected()
       {
          Console.WriteLine("Disconnected from " + IPaddress + ":" + Port);
@@ -377,6 +355,7 @@ namespace MainCClient.NET
          } else {
             Reset();
          }
+
       }
 
       /// <summary>
@@ -436,7 +415,7 @@ namespace MainCClient.NET
                LedPause.ImageIndex = 0;
                LedFinish.ImageIndex = 0;
                LedProcess.ImageIndex = 1;
-               UpdateNumberLabel(Client.SpotsPassed, Client.SpotsTotal);
+               NumberLbl.Invk(t => t.Text = Client.SpotsPassed + "/" + Client.SpotsTotal);
                break;
             case EPlanState.PAUSED:
                LedNotReady.ImageIndex = 0;
@@ -463,8 +442,7 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void PausePlanBtn_Click(object sender, EventArgs e)
       {
-         Warning();
-         var ok = Client.SendCommand(EPlanCommand.PAUSEPLAN);
+         var ok = Client.Pause();
 
          if (ok) {
             Console.WriteLine("Plan paused");
@@ -493,7 +471,7 @@ namespace MainCClient.NET
          LedProcess.ImageIndex = 0;
          LedPause.ImageIndex = 0;
          LedFinish.ImageIndex = 0;
-         UpdateNumberLabel(0, 0);
+         NumberLbl.Invk(t => t.Text = "0/0");
          Console.WriteLine("Reset");
       }
 
@@ -504,7 +482,6 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void SendDataBtn_Click(object sender, EventArgs e)
       {
-         Warning();
          SendPlan();
       }
 
@@ -514,11 +491,10 @@ namespace MainCClient.NET
       /// <param name="nblocks">The nblocks.</param>
       private void SendPlan(uint nblocks = 10)
       {
-         Warning();
          var ok = Client.Send(PlanData, nblocks);
 
          if (ok) {
-            Console.WriteLine("PlanData sent to server.");
+            Console.WriteLine("Plan sent to server.");
          }
       }
 
@@ -529,9 +505,7 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void StartPlanBtn_Click(object sender, EventArgs e)
       {
-         Warning();
- 
-         var ok = Client.SendCommand(EPlanCommand.STARTPLAN);
+         var ok = Client.Start();
          if (ok) {
             Console.WriteLine("Plan started");
          }
@@ -544,8 +518,8 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void StopPlanBtn_Click(object sender, EventArgs e)
       {
-         Warning();
-         var ok = Client.SendCommand(EPlanCommand.STOPPLAN);
+         var ok = Client.Stop();
+
          if (ok) {
             Console.WriteLine("Plan stopped");
          }
@@ -558,13 +532,14 @@ namespace MainCClient.NET
       /// <param name="total">The total.</param>
       private void UpdateNumberLabel(uint processed, uint total)
       {
-         var txt = processed + "/" + total;
+         //var txt = processed + "/" + total;
+         NumberLbl.Invk(t => t.Text = processed + "/" + total);
 
-         if (NumberLbl.InvokeRequired) {
+         /*if (NumberLbl.InvokeRequired) {
             NumberLbl.Invoke((MethodInvoker) delegate { NumberLbl.Text = txt; });
          } else {
             NumberLbl.Text = txt;
-         }
+         }*/
       }
 
       /// <summary>
@@ -588,23 +563,6 @@ namespace MainCClient.NET
             row.Cells[7].Value = spot.result_zangle.ToString();
             row.Cells[8].Value = spot.result_pcount.ToString();
             row.Cells[8].Value = spot.result_pcount.ToString();
-         }
-      }
-
-      /// <summary>
-      ///    Warnings this instance.
-      /// </summary>
-      private void Warning()
-      {
-         if (!IsConnected) {
-            Console.WriteLine("Not connected");
-            MessageBox.Show("Not connected", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return;
-         }
-
-         if (!PlanLoaded) {
-            Console.WriteLine("Load PlanData first");
-            MessageBox.Show("Load PlanData first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
          }
       }
 
