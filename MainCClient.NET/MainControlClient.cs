@@ -1,13 +1,11 @@
-﻿// $Id: MainControlClient.cs 7767 2020-03-11 16:00:49Z onuchin $
-//
-// Copyright (C) 2020 Valeriy Onuchin
+﻿// Copyright (C) 2020 Valeriy Onuchin
 
 //#define LOCAL_DEBUG
 
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Globalization;
+
 using System.Windows.Forms;
 using TM;
 using TMPlan;
@@ -30,7 +28,6 @@ namespace MainCClient.NET
       public MainControlClient()
       {
          InitializeComponent();
-
          Init();
       }
 
@@ -312,8 +309,7 @@ namespace MainCClient.NET
       {
          var fd = new OpenFileDialog();
          fd.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
-         var exedir = AppDomain.CurrentDomain.BaseDirectory;
-         fd.InitialDirectory = exedir;
+         fd.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
          if (fd.ShowDialog() == DialogResult.Cancel) {
             return;
@@ -330,7 +326,8 @@ namespace MainCClient.NET
 
          PlanLoaded = true;
          ShowPlan(PlanData);
-         Console.WriteLine("Plan loaded. Entries = " + PlanData.Count);
+         Console.WriteLine("Plan loaded" + ". " + 
+                           "Entries" + " = " + PlanData.Count);
       }
 
       /// <summary>
@@ -348,7 +345,7 @@ namespace MainCClient.NET
       /// </summary>
       private void OnDisconnected()
       {
-         Console.WriteLine("Disconnected from " + IPaddress + ":" + Port);
+         Console.WriteLine("Disconnected from" + " " + IPaddress + ":" + Port);
 
          if (InvokeRequired) {
             Invoke((MethodInvoker) Reset);
@@ -449,6 +446,9 @@ namespace MainCClient.NET
          }
       }
 
+      /// <summary>
+      /// Exit application
+      /// </summary>
       private void Quit()
       {
          Client.ServerStateChanged -= OnStateChanged;

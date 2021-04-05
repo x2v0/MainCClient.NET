@@ -98,6 +98,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainControlClient.en.resx">
+      <DependentUpon>MainControlClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainControlClient.resx">
       <DependentUpon>MainControlClient.cs</DependentUpon>
       <SubType>Designer</SubType>

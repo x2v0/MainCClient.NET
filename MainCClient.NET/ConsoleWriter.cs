@@ -1,6 +1,4 @@
-﻿// $Id: ConsoleWriter.cs 7760 2020-03-04 05:58:07Z onuchin $
-//
-// Copyright (C) 2020 Valeriy Onuchin
+﻿// Copyright (C) 2020 Valeriy Onuchin
 
 //#define LOCAL_DEBUG
 
