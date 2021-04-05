@@ -46,7 +46,7 @@ namespace MainCClient.NET
       /// <summary>
       ///    The plan data
       /// </summary>
-      public List<TMPlan.Spot> PlanData;
+      public List<Spot> PlanData;
 
       /// <summary>
       ///    The plan file
@@ -110,9 +110,7 @@ namespace MainCClient.NET
          try {
             foreach (var spot in plan) {
                var row = new[] {
-                  spot.id.ToString(), spot.xangle.ToString(), 
-                  spot.zangle.ToString(CultureInfo.InvariantCulture), 
-                  spot.energy.ToString(CultureInfo.InvariantCulture),
+                  spot.id.ToString(), spot.xangle.ToString(), spot.zangle.ToString(CultureInfo.InvariantCulture), spot.energy.ToString(CultureInfo.InvariantCulture),
                   spot.pcount.ToString(CultureInfo.InvariantCulture), "", "0", "0", "0"
                };
                TableGrid.Rows.Add(row);
@@ -172,10 +170,15 @@ namespace MainCClient.NET
          PlanLoaded = false;
 
          if (!IsConnected) {
-            Console.WriteLine("Not connected");
+            Console.WriteLine("Server is not connected");
+            return;
          }
 
-         Client.Clear();
+         var ok = Client.Clear();
+
+         if (ok) {
+            Console.WriteLine("Plan cleared");
+         }
       }
 
       /// <summary>
@@ -201,6 +204,7 @@ namespace MainCClient.NET
          }
 
          IsConnected = Client.Connect(IPaddress, Port);
+         var msg = "Server = " + IPaddress + " Port = " + Port;
 
          if (IsConnected) {
             LedConnect.ImageIndex = 1;
@@ -208,9 +212,10 @@ namespace MainCClient.NET
 
             Client.SendInfo("I'm test client for MainC");
             Client.SendCommand(EPlanCommand.GETSTATE);
-            //Client.SendCommand(EPlanCommand.CLEARPLAN);
+            msg += " is connected";
+            Console.WriteLine(msg);
          } else {
-            var msg = "Server = " + IPaddress + " Port = " + Port + " is unavailable";
+            msg += " is unavailable";
             Console.WriteLine(msg);
             MessageBox.Show(msg, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
          }
@@ -314,7 +319,6 @@ namespace MainCClient.NET
          Client = new PlanClient();
 
          Client.ServerStateChanged += OnStateChanged;
-         Client.DataBlockReceived += OnDataBlockReceived;
          Client.ServerDisconnected += OnDisconnected;
          Client.PlanResultsProcessed += UpdatePlanTable;
       }
@@ -345,9 +349,8 @@ namespace MainCClient.NET
          }
 
          PlanLoaded = true;
-
          ShowPlan(PlanData);
-         //Client.DumpPlan(PlanData);
+         Console.WriteLine("PlanData loaded. Entries = " + PlanData.Count);
       }
 
       /// <summary>
@@ -358,17 +361,6 @@ namespace MainCClient.NET
       private void OnClosed(object sender, FormClosedEventArgs e)
       {
          Quit();
-      }
-
-      /// <summary>
-      ///    Called when [data received].
-      /// </summary>
-      /// <param name="data">The data.</param>
-      /// <param name="bytesRead">The bytes read.</param>
-      private void OnDataBlockReceived(BufferChunk data, int bytesRead)
-      {
-         //Client.DumpDataBlock(data, bytesRead);
-         var l = bytesRead;
       }
 
       /// <summary>
@@ -415,7 +407,7 @@ namespace MainCClient.NET
       /// <param name="data">The state data.</param>
       private void OnStateChanged(StateData data)
       {
-         var state = (EPlanState)data.state;
+         var state = (EPlanState) data.state;
 
          if (state != EPlanState.INPROCESS) {
             Console.WriteLine(state);
@@ -472,16 +464,20 @@ namespace MainCClient.NET
       private void PausePlanBtn_Click(object sender, EventArgs e)
       {
          Warning();
-         Client.SendCommand(EPlanCommand.PAUSEPLAN);
+         var ok = Client.SendCommand(EPlanCommand.PAUSEPLAN);
+
+         if (ok) {
+            Console.WriteLine("Plan paused");
+         }
       }
 
       private void Quit()
       {
          Client.ServerStateChanged -= OnStateChanged;
-         Client.DataBlockReceived -= OnDataBlockReceived;
          Client.ServerDisconnected -= OnDisconnected;
          Client.PlanResultsProcessed -= UpdatePlanTable;
          Client = null;
+         Console.WriteLine("Quit");
          Environment.Exit(1);
       }
 
@@ -497,6 +493,8 @@ namespace MainCClient.NET
          LedProcess.ImageIndex = 0;
          LedPause.ImageIndex = 0;
          LedFinish.ImageIndex = 0;
+         UpdateNumberLabel(0, 0);
+         Console.WriteLine("Reset");
       }
 
       /// <summary>
@@ -511,18 +509,17 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      ///    Sends the plan.
+      ///    Sends the plan to server.
       /// </summary>
       /// <param name="nblocks">The nblocks.</param>
       private void SendPlan(uint nblocks = 10)
       {
-         try {
-            Client.Send(PlanData, nblocks);
-         } catch (Exception ex) {
-            //
-         }
+         Warning();
+         var ok = Client.Send(PlanData, nblocks);
 
-         Console.WriteLine("PlanData sent to server.");
+         if (ok) {
+            Console.WriteLine("PlanData sent to server.");
+         }
       }
 
       /// <summary>
@@ -533,7 +530,11 @@ namespace MainCClient.NET
       private void StartPlanBtn_Click(object sender, EventArgs e)
       {
          Warning();
-         Client.SendCommand(EPlanCommand.STARTPLAN);
+ 
+         var ok = Client.SendCommand(EPlanCommand.STARTPLAN);
+         if (ok) {
+            Console.WriteLine("Plan started");
+         }
       }
 
       /// <summary>
@@ -544,7 +545,10 @@ namespace MainCClient.NET
       private void StopPlanBtn_Click(object sender, EventArgs e)
       {
          Warning();
-         Client.SendCommand(EPlanCommand.STOPPLAN);
+         var ok = Client.SendCommand(EPlanCommand.STOPPLAN);
+         if (ok) {
+            Console.WriteLine("Plan stopped");
+         }
       }
 
       /// <summary>
