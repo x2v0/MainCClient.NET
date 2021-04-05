@@ -11,3 +11,8 @@ D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\obj\x86\Release\MainCClient.NET.csp
 D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\obj\x86\Release\ru\MainCClient.NET.resources.dll
 D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\obj\x86\Release\MainCClient.NET.exe
 D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\obj\x86\Release\MainCClient.NET.pdb
+D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\bin\Release\en\MainCClient.NET.resources.dll
+D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\bin\Release\TM.pdb
+D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\bin\Release\ru\TM.resources.dll
+D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\obj\x86\Release\MainCClient.NET.MainControlClient.en.resources
+D:\xtovo\wrk\MainCClient.NET\MainCClient.NET\obj\x86\Release\en\MainCClient.NET.resources.dll
