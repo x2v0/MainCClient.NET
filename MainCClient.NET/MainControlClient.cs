@@ -154,9 +154,9 @@ namespace MainCClient.NET
       /// <returns></returns>
       private bool CanProcessPlan()
       {
-         var msg = ru ? "Сервер не готов или не подключен" : 
-                        "Server is not ready or not connected";
-         if (!Client.IsReady) {
+         var msg = ru ? "Сервер не подключен" :
+                  "Server is not connected";
+         if (!Client.IsConnected) {
             Console.WriteLine(msg);
             return false;
          }
@@ -502,7 +502,7 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      /// 
+      ///  Re-translate Console.Write, Console.WriteLine output to Log window
       /// </summary>
       private void SetConsoleOutput()
       {
