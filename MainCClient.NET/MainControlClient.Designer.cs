@@ -40,7 +40,6 @@
          this.LedImages = new System.Windows.Forms.ImageList(this.components);
          this.LoadPlanBtn = new System.Windows.Forms.Button();
          this.ClearPlanBtn = new System.Windows.Forms.Button();
-         this.GetStateBtn = new System.Windows.Forms.Button();
          this.SendDataBtn = new System.Windows.Forms.Button();
          this.StartPlanBtn = new System.Windows.Forms.Button();
          this.PausePlanBtn = new System.Windows.Forms.Button();
@@ -60,9 +59,10 @@
          this.LedPause = new System.Windows.Forms.Label();
          this.LedProcess = new System.Windows.Forms.Label();
          this.LedReady = new System.Windows.Forms.Label();
-         this.LedNotReady = new System.Windows.Forms.Label();
          this.LedConnect = new System.Windows.Forms.Label();
+         this.StatusLb = new System.Windows.Forms.Label();
          this.NumberLbl = new System.Windows.Forms.Label();
+         this.AskStatusBtn = new System.Windows.Forms.Button();
          ((System.ComponentModel.ISupportInitialize)(this.PortNum)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.TableGrid)).BeginInit();
          this.SuspendLayout();
@@ -147,13 +147,6 @@
          this.ClearPlanBtn.Name = "ClearPlanBtn";
          this.ClearPlanBtn.UseVisualStyleBackColor = true;
          this.ClearPlanBtn.Click += new System.EventHandler(this.ClearPlanBtn_Click);
-         // 
-         // GetStateBtn
-         // 
-         resources.ApplyResources(this.GetStateBtn, "GetStateBtn");
-         this.GetStateBtn.Name = "GetStateBtn";
-         this.GetStateBtn.UseVisualStyleBackColor = true;
-         this.GetStateBtn.Click += new System.EventHandler(this.GetStateBtn_Click);
          // 
          // SendDataBtn
          // 
@@ -286,27 +279,35 @@
          this.LedReady.ImageList = this.LedImages;
          this.LedReady.Name = "LedReady";
          // 
-         // LedNotReady
-         // 
-         resources.ApplyResources(this.LedNotReady, "LedNotReady");
-         this.LedNotReady.ImageList = this.LedImages;
-         this.LedNotReady.Name = "LedNotReady";
-         // 
          // LedConnect
          // 
          resources.ApplyResources(this.LedConnect, "LedConnect");
          this.LedConnect.ImageList = this.LedImages;
          this.LedConnect.Name = "LedConnect";
          // 
+         // StatusLb
+         // 
+         resources.ApplyResources(this.StatusLb, "StatusLb");
+         this.StatusLb.Name = "StatusLb";
+         // 
          // NumberLbl
          // 
          resources.ApplyResources(this.NumberLbl, "NumberLbl");
          this.NumberLbl.Name = "NumberLbl";
          // 
+         // AskStatusBtn
+         // 
+         this.AskStatusBtn.BackColor = System.Drawing.SystemColors.ControlLight;
+         resources.ApplyResources(this.AskStatusBtn, "AskStatusBtn");
+         this.AskStatusBtn.Name = "AskStatusBtn";
+         this.AskStatusBtn.UseVisualStyleBackColor = false;
+         this.AskStatusBtn.Click += new System.EventHandler(this.GetStateBtn_Click);
+         // 
          // MainControlClient
          // 
          resources.ApplyResources(this, "$this");
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.Controls.Add(this.AskStatusBtn);
          this.Controls.Add(this.NumberLbl);
          this.Controls.Add(this.ClearLogBtn);
          this.Controls.Add(this.TableGrid);
@@ -314,14 +315,13 @@
          this.Controls.Add(this.PausePlanBtn);
          this.Controls.Add(this.StartPlanBtn);
          this.Controls.Add(this.SendDataBtn);
-         this.Controls.Add(this.GetStateBtn);
          this.Controls.Add(this.ClearPlanBtn);
          this.Controls.Add(this.LoadPlanBtn);
          this.Controls.Add(this.LedFinish);
          this.Controls.Add(this.LedPause);
          this.Controls.Add(this.LedProcess);
          this.Controls.Add(this.LedReady);
-         this.Controls.Add(this.LedNotReady);
+         this.Controls.Add(this.StatusLb);
          this.Controls.Add(this.LedConnect);
          this.Controls.Add(this.QuitBtn);
          this.Controls.Add(this.MessagesLB);
@@ -354,14 +354,12 @@
       private System.Windows.Forms.ListBox MessagesLB;
       private System.Windows.Forms.Button QuitBtn;
       private System.Windows.Forms.Label LedConnect;
-      private System.Windows.Forms.Label LedNotReady;
       private System.Windows.Forms.Label LedReady;
       private System.Windows.Forms.Label LedProcess;
       private System.Windows.Forms.Label LedPause;
       private System.Windows.Forms.Label LedFinish;
       private System.Windows.Forms.Button LoadPlanBtn;
       private System.Windows.Forms.Button ClearPlanBtn;
-      private System.Windows.Forms.Button GetStateBtn;
       private System.Windows.Forms.Button SendDataBtn;
       private System.Windows.Forms.Button StartPlanBtn;
       private System.Windows.Forms.Button PausePlanBtn;
@@ -378,7 +376,9 @@
       private System.Windows.Forms.DataGridViewTextBoxColumn ResultZ;
       private System.Windows.Forms.DataGridViewTextBoxColumn ResultIntensity;
       private System.Windows.Forms.Button ClearLogBtn;
+      private System.Windows.Forms.Label StatusLb;
       private System.Windows.Forms.Label NumberLbl;
+      private System.Windows.Forms.Button AskStatusBtn;
    }
 }
 

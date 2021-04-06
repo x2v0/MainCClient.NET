@@ -246,7 +246,7 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 41</value>
+    <value>1, 40</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -280,7 +280,7 @@
     <value>True</value>
   </data>
   <data name="MessagesLB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>899, 121</value>
+    <value>894, 121</value>
   </data>
   <data name="MessagesLB.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -298,10 +298,10 @@
     <value>17</value>
   </data>
   <data name="QuitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 425</value>
+    <value>754, 385</value>
   </data>
   <data name="QuitBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="QuitBtn.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -329,41 +329,41 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABs
-        CQAAAk1TRnQBSQFMAgEBBgEAAcwBAAHMAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/ATsB1AGUAf8BOgHSAZEB/wE7AdQBlAH/
-        AYIB1QGvAf8sAAHwAdEBkwL/AcwBUwL/AcwBUwL/AcwBUwH/AfAB0QGTAf+oAAGCAdUBrwH/AT8B6QGq
-        Af8BTQH/AewB/wFOAf8B8QH/AU0B/wHsAf8BPwHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAW8D/wHU
-        A/8B3AP/AdQC/wHiAW8B/wHwAdEBkwH/pAABOwHUAZQB/wFMAf8B5AH/AUwB/wHkAf8BTAH/AeQB/wFM
-        Af8B5AH/AUwB/wHkAf8BOwHUAZQB/yQAAf8BzgFVA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAVUB/6QA
-        AToB0gGRAf8BhAH/AfgB/wFJAf8B1gH/AUkB/wHWAf8BSQH/AdYB/wGEAf8B+AH/AToB0gGRAf8kAAH/
-        AcwBUwP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAFTAf+kAAE6AdIBkQH/AcwD/wFrAf8B6gH/
-        AWIB/wHjAf8BawH/AeoB/wHMA/8BOgHSAZEB/yQAAf8BzAFTA/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
-        AcwBUwH/pAABkwHmAcAB/wFRAe8BswH/AdsD/wHiA/8B2wP/AVEB7wGzAf8BkwHmAcAB/yQAAf8B4wGk
-        Av8B4gFvA/8B5QP/AekD/wHlAv8B4AFsAv8B4wGkAf+oAAGTAeYBwAH/AToB0gGRAf8BOgHSAY8B/wE6
-        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBUwL/AcwBUwL/AcwBUwL/AeMBpAH//wD/AP8A/wD/AP8A
+        CQAAAk1TRnQBSQFMAgEBBgEAAbwBAQG8AQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/ASoB1AGUAf8BKQHSAZEB/wEqAdQBlAH/
+        AYIB1QGvAf8sAAHwAdEBkwL/AcwBQgL/AcwBQgL/AcwBQgH/AfAB0QGTAf+oAAGCAdUBrwH/AS4B6QGq
+        Af8BPAH/AewB/wE9Af8B8QH/ATwB/wHsAf8BLgHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAV4D/wHU
+        A/8B3AP/AdQC/wHiAV4B/wHwAdEBkwH/pAABKgHUAZQB/wE7Af8B5AH/ATsB/wHkAf8BOwH/AeQB/wE7
+        Af8B5AH/ATsB/wHkAf8BKgHUAZQB/yQAAf8BzgFEA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAUQB/6QA
+        ASkB0gGRAf8BhAH/AfgB/wE4Af8B1gH/ATgB/wHWAf8BOAH/AdYB/wGEAf8B+AH/ASkB0gGRAf8kAAH/
+        AcwBQgP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAFCAf+kAAEpAdIBkQH/AcwD/wFaAf8B6gH/
+        AVEB/wHjAf8BWgH/AeoB/wHMA/8BKQHSAZEB/yQAAf8BzAFCA/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
+        AcwBQgH/pAABkwHmAcAB/wFAAe8BswH/AdsD/wHiA/8B2wP/AUAB7wGzAf8BkwHmAcAB/yQAAf8B4wGk
+        Av8B4gFeA/8B5QP/AekD/wHlAv8B4AFbAv8B4wGkAf+oAAGTAeYBwAH/ASkB0gGRAf8BKQHSAY8B/wEp
+        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBQgL/AcwBQgL/AcwBQgL/AeMBpAH//wD/AP8A/wD/AP8A
         /wD/ALQAAxYBHgMjATMDIwEzAyMBMwMWAR4sAAMWAR4DIwEzAyMBMwMjATMDFgEeLAADFgEeAyMBMwMj
-        ATMDIwEzAxYBHmgAAxYBHgNUAawBJQE8AcsB/wEkATsBygH/ASUBPAHLAf8DVAGsAxYBHiQAAxYBHgFT
-        AlQBrAEAAYoBOwH/AQABiQE6Af8BAAGKATsB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQoB/wG2
-        AYIBCQH/AbcBgwEKAf8CVAFTAawDFgEeKAABtAG+Av8BkQGgAv8BkQGgAv8BkQGgAv8BtAG+Av8oAANU
-        AawBMwFLAdkB/wFgAYgC/wFkAYwC/wFgAYgC/wEzAUsB2QH/A1QBrCQAAVMCVAGsAQABmwFNAf8BAAHO
-        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbAU0B/wFTAlQBrCQAAlQBUwGsAcUBkgEgAf8B7QHAAWUB/wHx
-        AcQBawH/Ae0BwAFlAf8BxQGSASAB/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
-        AZIBqAL/AbQBvgL/JAABJgE8AcsB/wFQAW0C/wFRAW0C/wFQAWwB/QH/AVEBbQL/AVABbQL/ASYBPAHL
-        Af8lAAGKATsB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKATsB/yQA
-        AbcBhAELAf8B6gG0AU0B/wHpAbQBTQH/AegBswFMAf8B6QG0AU0B/wHqAbQBTQH/AbcBhAELAf8kAAGR
-        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAASQBOwHLAf8BXgGIAv8BPgFe
-        AfsB/wE+AV4B+gH/AT4BXgH7Af8BXgGIAv8BJAE7AcsB/yUAAYkBOQH/ARYBzwGZAf8BAAHAAXAB/wEA
-        Ab4BbwH/AQABwAFwAf8BFgHPAZkB/wEAAYkBOQH/JAABtwGCAQoB/wHrAbkBVQH/AeMBpgEyAf8B4wGm
-        ATIB/wHjAaYBMgH/AesBuQFVAf8BtwGCAQoB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
-        AaUBvQL/AZEBoAL/JAABJAE7AcwB/wGQAaUB/QH/AUsBagH6Af8BRgFkAfkB/wFLAWoB+gH/AZABpQH9
-        Af8BJAE7AcwB/yUAAYoBOgH/AVcB2gG0Af8BDwHGAY4B/wEHAcMBiAH/AQ8BxgGOAf8BVwHaAbQB/wEA
-        AYoBOgH/JAABtwGDAQoB/wHuAcYBhAH/AeUBqgE6Af8B4gGmATIB/wHlAaoBOgH/Ae4BxgGEAf8BtwGD
-        AQoB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXATYBTgHb
-        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ATUBTgHbAf8DTwGXJAABTgJPAZcBAQGfAVQB/wFlAdoBtwH/
-        AWsB3gG9Af8BZQHaAbcB/wEBAZ8BVAH/AU4CTwGXJAACTwFOAZcBxgGSAR8B/wHsAcQBggH/Ae8ByAGG
-        Af8B7AHEAYIB/wHGAZEBHQH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
-        Av8BvQHHAv8oAANPAZcBIwE6AcwB/wEiATkBywH/ASMBOgHMAf8DTwGXLAABTgJPAZcBAAGKATkB/wEA
-        AYkBNwH/AQABigE5Af8BTgJPAZcsAAJPAU4BlwG3AYMBCgH/AbYBggEIAf8BtwGDAQoB/wJPAU4BlywA
+        ATMDIwEzAxYBHmgAAxYBHgNUAawBFAErAcsB/wETASoBygH/ARQBKwHLAf8DVAGsAxYBHiQAAxYBHgFT
+        AlQBrAEAAYoBKgH/AQABiQEpAf8BAAGKASoB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQAB/wG2
+        AYIBAAH/AbcBgwEAAf8CVAFTAawDFgEeKAABtAG+Av8BkQGgAv8BkQGgAv8BkQGgAv8BtAG+Av8oAANU
+        AawBIgE6AdkB/wFPAYgC/wFTAYwC/wFPAYgC/wEiAToB2QH/A1QBrCQAAVMCVAGsAQABmwE8Af8BAAHO
+        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbATwB/wFTAlQBrCQAAlQBUwGsAcUBkgEPAf8B7QHAAVQB/wHx
+        AcQBWgH/Ae0BwAFUAf8BxQGSAQ8B/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
+        AZIBqAL/AbQBvgL/JAABFQErAcsB/wE/AVwC/wFAAVwC/wE/AVsB/QH/AUABXAL/AT8BXAL/ARUBKwHL
+        Af8lAAGKASoB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKASoB/yQA
+        AbcBhAEAAf8B6gG0ATwB/wHpAbQBPAH/AegBswE7Af8B6QG0ATwB/wHqAbQBPAH/AbcBhAEAAf8kAAGR
+        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAARMBKgHLAf8BTQGIAv8BLQFN
+        AfsB/wEtAU0B+gH/AS0BTQH7Af8BTQGIAv8BEwEqAcsB/yUAAYkBKAH/AQUBzwGZAf8BAAHAAV8B/wEA
+        Ab4BXgH/AQABwAFfAf8BBQHPAZkB/wEAAYkBKAH/JAABtwGCAQAB/wHrAbkBRAH/AeMBpgEhAf8B4wGm
+        ASEB/wHjAaYBIQH/AesBuQFEAf8BtwGCAQAB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
+        AaUBvQL/AZEBoAL/JAABEwEqAcwB/wGQAaUB/QH/AToBWQH6Af8BNQFTAfkB/wE6AVkB+gH/AZABpQH9
+        Af8BEwEqAcwB/yUAAYoBKQH/AUYB2gG0Af8BAAHGAY4B/wEAAcMBiAH/AQABxgGOAf8BRgHaAbQB/wEA
+        AYoBKQH/JAABtwGDAQAB/wHuAcYBhAH/AeUBqgEpAf8B4gGmASEB/wHlAaoBKQH/Ae4BxgGEAf8BtwGD
+        AQAB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXASUBPQHb
+        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ASQBPQHbAf8DTwGXJAABTgJPAZcBAAGfAUMB/wFUAdoBtwH/
+        AVoB3gG9Af8BVAHaAbcB/wEAAZ8BQwH/AU4CTwGXJAACTwFOAZcBxgGSAQ4B/wHsAcQBggH/Ae8ByAGG
+        Af8B7AHEAYIB/wHGAZEBDAH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
+        Av8BvQHHAv8oAANPAZcBEgEpAcwB/wERASgBywH/ARIBKQHMAf8DTwGXLAABTgJPAZcBAAGKASgB/wEA
+        AYkBJgH/AQABigEoAf8BTgJPAZcsAAJPAU4BlwG3AYMBAAH/AbYBggEAAf8BtwGDAQAB/wJPAU4BlywA
         Ab0BxwL/AZEBoAL/AZEBoAL/AZEBoAL/Ab0BxwL//wD/AP8A/wAYAAFCAU0BPgcAAT4DAAEoAwABQAMA
         ASADAAEBAQABAQYAAQEWAAP/AQAE/wQABP8EAAT/BAAE/wQABP8EAAH8AR8B/AEfBAAB+AEPAfgBDwQA
         AfgBDwH4AQ8EAAH4AQ8B+AEPBAAB+AEPAfgBDwQAAfgBDwH4AQ8EAAH8AR8B/AEfBAAE/wQABP8EAAT/
@@ -373,10 +373,10 @@
 </value>
   </data>
   <data name="LoadPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 151</value>
+    <value>754, 150</value>
   </data>
   <data name="LoadPlanBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="LoadPlanBtn.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -400,7 +400,7 @@
     <value>754, 180</value>
   </data>
   <data name="ClearPlanBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="ClearPlanBtn.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -420,35 +420,11 @@
   <data name="&gt;&gt;ClearPlanBtn.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="GetStateBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 95</value>
-  </data>
-  <data name="GetStateBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
-  </data>
-  <data name="GetStateBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="GetStateBtn.Text" xml:space="preserve">
-    <value>Get State</value>
-  </data>
-  <data name="&gt;&gt;GetStateBtn.Name" xml:space="preserve">
-    <value>GetStateBtn</value>
-  </data>
-  <data name="&gt;&gt;GetStateBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GetStateBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GetStateBtn.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="SendDataBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 209</value>
+    <value>754, 210</value>
   </data>
   <data name="SendDataBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="SendDataBtn.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -466,13 +442,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SendDataBtn.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="StartPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 297</value>
+    <value>754, 295</value>
   </data>
   <data name="StartPlanBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="StartPlanBtn.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -490,13 +466,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;StartPlanBtn.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="PausePlanBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 326</value>
+    <value>754, 325</value>
   </data>
   <data name="PausePlanBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="PausePlanBtn.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -514,13 +490,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PausePlanBtn.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="StopPlanBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>754, 355</value>
   </data>
   <data name="StopPlanBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>135, 23</value>
   </data>
   <data name="StopPlanBtn.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -538,7 +514,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;StopPlanBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -640,13 +616,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TableGrid.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ClearLogBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 386</value>
+    <value>754, 420</value>
   </data>
   <data name="ClearLogBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
+    <value>120, 23</value>
   </data>
   <data name="ClearLogBtn.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -664,7 +640,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ClearLogBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LedFinish.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -676,7 +652,7 @@
     <value>0</value>
   </data>
   <data name="LedFinish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 78</value>
+    <value>748, 125</value>
   </data>
   <data name="LedFinish.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -709,7 +685,7 @@
     <value>0</value>
   </data>
   <data name="LedPause.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 62</value>
+    <value>748, 110</value>
   </data>
   <data name="LedPause.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -742,7 +718,7 @@
     <value>0</value>
   </data>
   <data name="LedProcess.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 46</value>
+    <value>748, 95</value>
   </data>
   <data name="LedProcess.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 13</value>
@@ -775,16 +751,16 @@
     <value>0</value>
   </data>
   <data name="LedReady.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 31</value>
+    <value>748, 80</value>
   </data>
   <data name="LedReady.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
+    <value>68, 13</value>
   </data>
   <data name="LedReady.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="LedReady.Text" xml:space="preserve">
-    <value>     Ready</value>
+    <value>     Not ready</value>
   </data>
   <data name="&gt;&gt;LedReady.Name" xml:space="preserve">
     <value>LedReady</value>
@@ -797,45 +773,6 @@
   </data>
   <data name="&gt;&gt;LedReady.ZOrder" xml:space="preserve">
     <value>13</value>
-  </data>
-  <data name="LedNotReady.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LedNotReady.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="LedNotReady.ImageIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="LedNotReady.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 16</value>
-  </data>
-  <data name="LedNotReady.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="LedNotReady.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="LedNotReady.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LedNotReady.Text" xml:space="preserve">
-    <value>     Not Ready</value>
-  </data>
-  <data name="LedNotReady.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;LedNotReady.Name" xml:space="preserve">
-    <value>LedNotReady</value>
-  </data>
-  <data name="&gt;&gt;LedNotReady.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LedNotReady.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LedNotReady.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="LedConnect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -867,20 +804,47 @@
   <data name="&gt;&gt;LedConnect.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="StatusLb.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold, Underline</value>
+  </data>
+  <data name="StatusLb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>752, 40</value>
+  </data>
+  <data name="StatusLb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="StatusLb.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="StatusLb.Text" xml:space="preserve">
+    <value>  Status of server-plan         </value>
+  </data>
+  <data name="&gt;&gt;StatusLb.Name" xml:space="preserve">
+    <value>StatusLb</value>
+  </data>
+  <data name="&gt;&gt;StatusLb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusLb.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StatusLb.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="NumberLbl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="NumberLbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>811, 46</value>
+    <value>831, 95</value>
   </data>
   <data name="NumberLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>63, 13</value>
   </data>
   <data name="NumberLbl.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
   <data name="NumberLbl.Text" xml:space="preserve">
-    <value>                       </value>
+    <value>     0/0        </value>
   </data>
   <data name="&gt;&gt;NumberLbl.Name" xml:space="preserve">
     <value>NumberLbl</value>
@@ -892,11 +856,35 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;NumberLbl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AskStatusBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AskStatusBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 55</value>
+  </data>
+  <data name="AskStatusBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 23</value>
+  </data>
+  <data name="AskStatusBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="AskStatusBtn.Text" xml:space="preserve">
+    <value>Ask for Server Status</value>
+  </data>
+  <data name="&gt;&gt;AskStatusBtn.Name" xml:space="preserve">
+    <value>AskStatusBtn</value>
+  </data>
+  <data name="&gt;&gt;AskStatusBtn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AskStatusBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AskStatusBtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -907,7 +895,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>899, 536</value>
+    <value>894, 536</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MainControl Client</value>

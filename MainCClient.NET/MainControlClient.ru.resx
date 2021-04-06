@@ -155,12 +155,6 @@
   <data name="QuitBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="QuitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>741, 425</value>
-  </data>
-  <data name="QuitBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 23</value>
-  </data>
   <data name="QuitBtn.Text" xml:space="preserve">
     <value>Завершить программу</value>
   </data>
@@ -169,41 +163,41 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABs
-        CQAAAk1TRnQBSQFMAgEBBgEAAZgBAAGYAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/ATgB1AGUAf8BNwHSAZEB/wE4AdQBlAH/
-        AYIB1QGvAf8sAAHwAdEBkwL/AcwBUAL/AcwBUAL/AcwBUAH/AfAB0QGTAf+oAAGCAdUBrwH/ATwB6QGq
-        Af8BSgH/AewB/wFLAf8B8QH/AUoB/wHsAf8BPAHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAWwD/wHU
-        A/8B3AP/AdQC/wHiAWwB/wHwAdEBkwH/pAABOAHUAZQB/wFJAf8B5AH/AUkB/wHkAf8BSQH/AeQB/wFJ
-        Af8B5AH/AUkB/wHkAf8BOAHUAZQB/yQAAf8BzgFSA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAVIB/6QA
-        ATcB0gGRAf8BhAH/AfgB/wFGAf8B1gH/AUYB/wHWAf8BRgH/AdYB/wGEAf8B+AH/ATcB0gGRAf8kAAH/
-        AcwBUAP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAFQAf+kAAE3AdIBkQH/AcwD/wFoAf8B6gH/
-        AV8B/wHjAf8BaAH/AeoB/wHMA/8BNwHSAZEB/yQAAf8BzAFQA/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
-        AcwBUAH/pAABkwHmAcAB/wFOAe8BswH/AdsD/wHiA/8B2wP/AU4B7wGzAf8BkwHmAcAB/yQAAf8B4wGk
-        Av8B4gFsA/8B5QP/AekD/wHlAv8B4AFpAv8B4wGkAf+oAAGTAeYBwAH/ATcB0gGRAf8BNwHSAY8B/wE3
-        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBUAL/AcwBUAL/AcwBUAL/AeMBpAH//wD/AP8A/wD/AP8A
+        CQAAAk1TRnQBSQFMAgEBBgEAASABAQEgAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/AScB1AGUAf8BJgHSAZEB/wEnAdQBlAH/
+        AYIB1QGvAf8sAAHwAdEBkwL/AcwBPwL/AcwBPwL/AcwBPwH/AfAB0QGTAf+oAAGCAdUBrwH/ASsB6QGq
+        Af8BOQH/AewB/wE6Af8B8QH/ATkB/wHsAf8BKwHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAVsD/wHU
+        A/8B3AP/AdQC/wHiAVsB/wHwAdEBkwH/pAABJwHUAZQB/wE4Af8B5AH/ATgB/wHkAf8BOAH/AeQB/wE4
+        Af8B5AH/ATgB/wHkAf8BJwHUAZQB/yQAAf8BzgFBA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAUEB/6QA
+        ASYB0gGRAf8BhAH/AfgB/wE1Af8B1gH/ATUB/wHWAf8BNQH/AdYB/wGEAf8B+AH/ASYB0gGRAf8kAAH/
+        AcwBPwP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAE/Af+kAAEmAdIBkQH/AcwD/wFXAf8B6gH/
+        AU4B/wHjAf8BVwH/AeoB/wHMA/8BJgHSAZEB/yQAAf8BzAE/A/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
+        AcwBPwH/pAABkwHmAcAB/wE9Ae8BswH/AdsD/wHiA/8B2wP/AT0B7wGzAf8BkwHmAcAB/yQAAf8B4wGk
+        Av8B4gFbA/8B5QP/AekD/wHlAv8B4AFYAv8B4wGkAf+oAAGTAeYBwAH/ASYB0gGRAf8BJgHSAY8B/wEm
+        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBPwL/AcwBPwL/AcwBPwL/AeMBpAH//wD/AP8A/wD/AP8A
         /wD/ALQAAxYBHgMjATMDIwEzAyMBMwMWAR4sAAMWAR4DIwEzAyMBMwMjATMDFgEeLAADFgEeAyMBMwMj
-        ATMDIwEzAxYBHmgAAxYBHgNUAawBIgE5AcsB/wEhATgBygH/ASIBOQHLAf8DVAGsAxYBHiQAAxYBHgFT
-        AlQBrAEAAYoBOAH/AQABiQE3Af8BAAGKATgB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQcB/wG2
-        AYIBBgH/AbcBgwEHAf8CVAFTAawDFgEeKAABtAG+Av8BkQGgAv8BkQGgAv8BkQGgAv8BtAG+Av8oAANU
-        AawBMAFIAdkB/wFdAYgC/wFhAYwC/wFdAYgC/wEwAUgB2QH/A1QBrCQAAVMCVAGsAQABmwFKAf8BAAHO
-        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbAUoB/wFTAlQBrCQAAlQBUwGsAcUBkgEdAf8B7QHAAWIB/wHx
-        AcQBaAH/Ae0BwAFiAf8BxQGSAR0B/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
-        AZIBqAL/AbQBvgL/JAABIwE5AcsB/wFNAWoC/wFOAWoC/wFNAWkB/QH/AU4BagL/AU0BagL/ASMBOQHL
-        Af8lAAGKATgB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKATgB/yQA
-        AbcBhAEIAf8B6gG0AUoB/wHpAbQBSgH/AegBswFJAf8B6QG0AUoB/wHqAbQBSgH/AbcBhAEIAf8kAAGR
-        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAASEBOAHLAf8BWwGIAv8BOwFb
-        AfsB/wE7AVsB+gH/ATsBWwH7Af8BWwGIAv8BIQE4AcsB/yUAAYkBNgH/ARMBzwGZAf8BAAHAAW0B/wEA
-        Ab4BbAH/AQABwAFtAf8BEwHPAZkB/wEAAYkBNgH/JAABtwGCAQcB/wHrAbkBUgH/AeMBpgEvAf8B4wGm
-        AS8B/wHjAaYBLwH/AesBuQFSAf8BtwGCAQcB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
-        AaUBvQL/AZEBoAL/JAABIQE4AcwB/wGQAaUB/QH/AUgBZwH6Af8BQwFhAfkB/wFIAWcB+gH/AZABpQH9
-        Af8BIQE4AcwB/yUAAYoBNwH/AVQB2gG0Af8BDAHGAY4B/wEEAcMBiAH/AQwBxgGOAf8BVAHaAbQB/wEA
-        AYoBNwH/JAABtwGDAQcB/wHuAcYBhAH/AeUBqgE3Af8B4gGmAS8B/wHlAaoBNwH/Ae4BxgGEAf8BtwGD
-        AQcB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXATMBSwHb
-        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ATIBSwHbAf8DTwGXJAABTgJPAZcBAAGfAVEB/wFiAdoBtwH/
-        AWgB3gG9Af8BYgHaAbcB/wEAAZ8BUQH/AU4CTwGXJAACTwFOAZcBxgGSARwB/wHsAcQBggH/Ae8ByAGG
-        Af8B7AHEAYIB/wHGAZEBGgH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
-        Av8BvQHHAv8oAANPAZcBIAE3AcwB/wEfATYBywH/ASABNwHMAf8DTwGXLAABTgJPAZcBAAGKATYB/wEA
-        AYkBNAH/AQABigE2Af8BTgJPAZcsAAJPAU4BlwG3AYMBBwH/AbYBggEFAf8BtwGDAQcB/wJPAU4BlywA
+        ATMDIwEzAxYBHmgAAxYBHgNUAawBEQEoAcsB/wEQAScBygH/AREBKAHLAf8DVAGsAxYBHiQAAxYBHgFT
+        AlQBrAEAAYoBJwH/AQABiQEmAf8BAAGKAScB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQAB/wG2
+        AYIBAAH/AbcBgwEAAf8CVAFTAawDFgEeKAABtAG+Av8BkQGgAv8BkQGgAv8BkQGgAv8BtAG+Av8oAANU
+        AawBHwE3AdkB/wFMAYgC/wFQAYwC/wFMAYgC/wEfATcB2QH/A1QBrCQAAVMCVAGsAQABmwE5Af8BAAHO
+        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbATkB/wFTAlQBrCQAAlQBUwGsAcUBkgEMAf8B7QHAAVEB/wHx
+        AcQBVwH/Ae0BwAFRAf8BxQGSAQwB/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
+        AZIBqAL/AbQBvgL/JAABEgEoAcsB/wE8AVkC/wE9AVkC/wE8AVgB/QH/AT0BWQL/ATwBWQL/ARIBKAHL
+        Af8lAAGKAScB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKAScB/yQA
+        AbcBhAEAAf8B6gG0ATkB/wHpAbQBOQH/AegBswE4Af8B6QG0ATkB/wHqAbQBOQH/AbcBhAEAAf8kAAGR
+        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAARABJwHLAf8BSgGIAv8BKgFK
+        AfsB/wEqAUoB+gH/ASoBSgH7Af8BSgGIAv8BEAEnAcsB/yUAAYkBJQH/AQIBzwGZAf8BAAHAAVwB/wEA
+        Ab4BWwH/AQABwAFcAf8BAgHPAZkB/wEAAYkBJQH/JAABtwGCAQAB/wHrAbkBQQH/AeMBpgEeAf8B4wGm
+        AR4B/wHjAaYBHgH/AesBuQFBAf8BtwGCAQAB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
+        AaUBvQL/AZEBoAL/JAABEAEnAcwB/wGQAaUB/QH/ATcBVgH6Af8BMgFQAfkB/wE3AVYB+gH/AZABpQH9
+        Af8BEAEnAcwB/yUAAYoBJgH/AUMB2gG0Af8BAAHGAY4B/wEAAcMBiAH/AQABxgGOAf8BQwHaAbQB/wEA
+        AYoBJgH/JAABtwGDAQAB/wHuAcYBhAH/AeUBqgEmAf8B4gGmAR4B/wHlAaoBJgH/Ae4BxgGEAf8BtwGD
+        AQAB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXASIBOgHb
+        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ASEBOgHbAf8DTwGXJAABTgJPAZcBAAGfAUAB/wFRAdoBtwH/
+        AVcB3gG9Af8BUQHaAbcB/wEAAZ8BQAH/AU4CTwGXJAACTwFOAZcBxgGSAQsB/wHsAcQBggH/Ae8ByAGG
+        Af8B7AHEAYIB/wHGAZEBCQH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
+        Av8BvQHHAv8oAANPAZcBDwEmAcwB/wEOASUBywH/AQ8BJgHMAf8DTwGXLAABTgJPAZcBAAGKASUB/wEA
+        AYkBIwH/AQABigElAf8BTgJPAZcsAAJPAU4BlwG3AYMBAAH/AbYBggEAAf8BtwGDAQAB/wJPAU4BlywA
         Ab0BxwL/AZEBoAL/AZEBoAL/AZEBoAL/Ab0BxwL//wD/AP8A/wAYAAFCAU0BPgcAAT4DAAEoAwABQAMA
         ASADAAEBAQABAQYAAQEWAAP/AQAE/wQABP8EAAT/BAAE/wQABP8EAAH8AR8B/AEfBAAB+AEPAfgBDwQA
         AfgBDwH4AQ8EAAH4AQ8B+AEPBAAB+AEPAfgBDwQAAfgBDwH4AQ8EAAH8AR8B/AEfBAAE/wQABP8EAAT/
@@ -223,15 +217,6 @@
   </data>
   <data name="ClearPlanBtn.Text" xml:space="preserve">
     <value>Очистить план</value>
-  </data>
-  <data name="GetStateBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="GetStateBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>754, 100</value>
-  </data>
-  <data name="GetStateBtn.Text" xml:space="preserve">
-    <value>Статус сервера</value>
   </data>
   <data name="SendDataBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -294,31 +279,47 @@
     <value>NoControl</value>
   </data>
   <data name="LedReady.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
-  </data>
-  <data name="LedReady.Text" xml:space="preserve">
-    <value>     Готов</value>
-  </data>
-  <data name="LedNotReady.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LedNotReady.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
   </data>
-  <data name="LedNotReady.Text" xml:space="preserve">
+  <data name="LedReady.Text" xml:space="preserve">
     <value>     Не готов</value>
   </data>
   <data name="LedConnect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="StatusLb.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="StatusLb.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="StatusLb.ImageIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="StatusLb.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="StatusLb.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="StatusLb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="StatusLb.Text" xml:space="preserve">
+    <value>Статус сервера-плана</value>
+  </data>
+  <data name="StatusLb.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="NumberLbl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="NumberLbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>830, 46</value>
+    <value>830, 95</value>
   </data>
-  <data name="NumberLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
-  </data>
-  <data name="NumberLbl.Text" xml:space="preserve">
-    <value>             </value>
+  <data name="AskStatusBtn.Text" xml:space="preserve">
+    <value>Запрос статус сервера</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Контроллер плана облучения</value>
