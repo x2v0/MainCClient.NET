@@ -111,8 +111,8 @@
          // 
          // MessagesLB
          // 
-         resources.ApplyResources(this.MessagesLB, "MessagesLB");
          this.MessagesLB.BackColor = System.Drawing.Color.WhiteSmoke;
+         resources.ApplyResources(this.MessagesLB, "MessagesLB");
          this.MessagesLB.FormattingEnabled = true;
          this.MessagesLB.Name = "MessagesLB";
          // 
@@ -185,7 +185,6 @@
          // 
          // TableGrid
          // 
-         resources.ApplyResources(this.TableGrid, "TableGrid");
          this.TableGrid.BackgroundColor = System.Drawing.Color.White;
          this.TableGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -198,6 +197,7 @@
             this.ResultZ,
             this.ResultIntensity});
          this.TableGrid.GridColor = System.Drawing.Color.White;
+         resources.ApplyResources(this.TableGrid, "TableGrid");
          this.TableGrid.Name = "TableGrid";
          // 
          // Id

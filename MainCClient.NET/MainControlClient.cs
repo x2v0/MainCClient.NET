@@ -5,7 +5,6 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-
 using System.Windows.Forms;
 using TM;
 using TMPlan;
@@ -75,6 +74,51 @@ namespace MainCClient.NET
       }
 
       /// <summary>
+      /// True if server is connected
+      /// </summary>
+      public bool IsConnected
+      {
+         get
+         {
+            return (Client != null) && Client.IsConnected;
+         }
+      }
+
+      /// <summary>
+      ///  True if plan processing is finished
+      /// </summary>
+      public bool IsPlanFinished
+      {
+         get
+         {
+            return (Client != null) && 
+                   (Client.SpotsTotal == Client.SpotsPassed) && 
+                   (Client.SpotsPassed > 0);
+         }
+      }
+
+      /// <summary>
+      /// True if plan data sent to server
+      /// </summary>
+      public bool IsPlanSent
+      {
+         get;
+         private set;
+      }
+
+      /// <summary>
+      /// True if plan processing is ON
+      /// </summary>
+      public bool IsPlanProcessing
+      {
+         get
+         {
+            return (Client != null) && 
+                   (Client.SpotsPassed < Client.SpotsTotal);
+         }
+      }
+
+      /// <summary>
       ///    Gets or sets a value indicating whether [plan loaded].
       /// </summary>
       /// <value><c>true</c> if [plan loaded]; otherwise, <c>false</c>.</value>
@@ -82,22 +126,6 @@ namespace MainCClient.NET
       {
          get;
          set;
-      }
-
-      public bool IsConnected
-      {
-         get
-         {
-            return Client != null && Client.IsConnected;
-         }
-      }
-
-      public bool IsProcessing
-      {
-         get
-         {
-            return Client != null && Client.SpotsPassed < Client.SpotsTotal;
-         }
       }
 
       #endregion
@@ -112,14 +140,9 @@ namespace MainCClient.NET
       {
          try {
             foreach (var spot in plan) {
-               var row = new[] {
-                  spot.id.ToString(), 
-                  spot.xangle.ToString(), 
-                  spot.zangle.ToString(), 
-                  spot.energy.ToString(),
-                  spot.pcount.ToString(), 
-                  "", "0", "0", "0"
-               };
+               var row = new[] {spot.id.ToString(), spot.xangle.ToString(), 
+                                spot.zangle.ToString(), spot.energy.ToString(), 
+                                spot.pcount.ToString(), "", "0", "0", "0"};
                TableGrid.Rows.Add(row);
             }
          } catch {
@@ -153,6 +176,30 @@ namespace MainCClient.NET
       }
 
       /// <summary>
+      /// </summary>
+      /// <returns></returns>
+      private bool CanProcessPlan()
+      {
+         if (!IsConnected || !IsServerReady) {
+            Console.WriteLine("Server is not ready or not connected");
+            return false;
+         }
+
+         if (!PlanLoaded ||
+             !IsPlanSent) {
+            Console.WriteLine("Plan is not loaded to the server");
+            return false;
+         }
+
+         if (!IsPlanFinished) {
+            Console.WriteLine("Plan processing is finished");
+            return false;
+         }
+
+         return true;
+      }
+
+      /// <summary>
       ///    Handles the Click event of the ClearLogBtn control.
       /// </summary>
       /// <param name="sender">The source of the event.</param>
@@ -169,18 +216,18 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void ClearPlanBtn_Click(object sender, EventArgs e)
       {
-        
-         if (!IsConnected) {
-            Console.WriteLine("Server is not connected");
+         if (!IsConnected || !IsServerReady) {
+            Console.WriteLine("Server is not ready or not connected");
             return;
          }
 
-         var ok = Client.Clear();
-
-         if (ok) {
-            Console.WriteLine("Clear request sent to server");
+         if (!Client.Clear()) {
+            Console.WriteLine("Failed to clear plan on server");
+            return;
          }
 
+         Console.WriteLine("Clear request sent to server");
+         IsPlanSent = false;
          TableGrid.Rows.Clear();
          PlanLoaded = false;
       }
@@ -226,28 +273,6 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      ///    Handles the WriteEvent event of the ConsoleWriter control.
-      /// </summary>
-      /// <param name="sender">The source of the event.</param>
-      /// <param name="e">The <see cref="ConsoleWriterEventArgs" /> instance containing the event data.</param>
-      private void OnConsoleWrite(object sender, ConsoleWriterEventArgs e)
-      {
-         var txt = "\t" + DateTime.Now + " ::  " + e.Value;
-         AddMessage(txt);
-      }
-
-      /// <summary>
-      ///    Handles the WriteLineEvent event of the ConsoleWriter control.
-      /// </summary>
-      /// <param name="sender">The source of the event.</param>
-      /// <param name="e">The <see cref="ConsoleWriterEventArgs" /> instance containing the event data.</param>
-      private void OnConsoleWriteLine(object sender, ConsoleWriterEventArgs e)
-      {
-         var txt = "\t" + DateTime.Now + " ::  " + e.Value;
-         AddMessage(txt);
-      }
-
-      /// <summary>
       ///    Gets the row by identifier.
       /// </summary>
       /// <param name="id">The spot identifier.</param>
@@ -283,14 +308,6 @@ namespace MainCClient.NET
          }
 
          Client.AskServerState();
-      }
-
-      private void SetConsoleOutput()
-      {
-         fConsoleWriter = new ConsoleWriter();
-         fConsoleWriter.WriteEvent += OnConsoleWrite;
-         fConsoleWriter.WriteLineEvent += OnConsoleWriteLine;
-         Console.SetOut(fConsoleWriter);
       }
 
       /// <summary>
@@ -332,18 +349,39 @@ namespace MainCClient.NET
 
          PlanLoaded = true;
          ShowPlan(PlanData);
-         Console.WriteLine("Plan loaded" + ". " + 
-                           "Entries" + " = " + PlanData.Count);
+         Console.WriteLine("Plan loaded. Entries = " + PlanData.Count);
       }
 
       /// <summary>
-      ///    Handles the <see cref="E:Closed" /> event.
+      ///    Handles the Closed event.
       /// </summary>
       /// <param name="sender">The sender.</param>
       /// <param name="e">The <see cref="FormClosedEventArgs" /> instance containing the event data.</param>
       private void OnClosed(object sender, FormClosedEventArgs e)
       {
          Quit();
+      }
+
+      /// <summary>
+      ///    Handles the WriteEvent event of the ConsoleWriter control.
+      /// </summary>
+      /// <param name="sender">The source of the event.</param>
+      /// <param name="e">The <see cref="ConsoleWriterEventArgs" /> instance containing the event data.</param>
+      private void OnConsoleWrite(object sender, ConsoleWriterEventArgs e)
+      {
+         var txt = "\t" + DateTime.Now + " ::  " + e.Value;
+         AddMessage(txt);
+      }
+
+      /// <summary>
+      ///    Handles the WriteLineEvent event of the ConsoleWriter control.
+      /// </summary>
+      /// <param name="sender">The source of the event.</param>
+      /// <param name="e">The <see cref="ConsoleWriterEventArgs" /> instance containing the event data.</param>
+      private void OnConsoleWriteLine(object sender, ConsoleWriterEventArgs e)
+      {
+         var txt = "\t" + DateTime.Now + " ::  " + e.Value;
+         AddMessage(txt);
       }
 
       /// <summary>
@@ -358,7 +396,6 @@ namespace MainCClient.NET
          } else {
             Reset();
          }
-
       }
 
       /// <summary>
@@ -378,6 +415,11 @@ namespace MainCClient.NET
          }
       }
 
+      /// <summary>
+      /// 
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
       private void OnQuitClick(object sender, EventArgs e)
       {
          Quit();
@@ -402,7 +444,7 @@ namespace MainCClient.NET
                LedProcess.ImageIndex = 0;
                LedPause.ImageIndex = 0;
                LedFinish.ImageIndex = 0;
-
+               IsServerReady = false;
                break;
             case EPlanState.READY:
                LedNotReady.ImageIndex = 0;
@@ -411,6 +453,7 @@ namespace MainCClient.NET
                LedPause.ImageIndex = 0;
                LedFinish.ImageIndex = 0;
                LedReady.ImageIndex = 1;
+               IsServerReady = true;
                break;
             case EPlanState.INPROCESS:
                LedNotReady.ImageIndex = 0;
@@ -426,7 +469,7 @@ namespace MainCClient.NET
                LedProcess.ImageIndex = 0;
                LedPause.ImageIndex = 0;
                LedPause.ImageIndex = 1;
-
+               IsPlanPaused = true;
                break;
             case EPlanState.FINISHED:
                LedNotReady.ImageIndex = 0;
@@ -439,26 +482,41 @@ namespace MainCClient.NET
       }
 
       /// <summary>
+      ///  true if plan is paused
+      /// </summary>
+      public bool IsPlanPaused
+      {
+         get;
+         private set;
+      }
+
+      /// <summary>
+      ///  true if server is ready
+      /// </summary>
+      public bool IsServerReady
+      {
+         get;
+         private set;
+      }
+
+      /// <summary>
       ///    Handles the Click event of the PausePlanBtn control.
       /// </summary>
       /// <param name="sender">The source of the event.</param>
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void PausePlanBtn_Click(object sender, EventArgs e)
       {
-         if (!IsConnected) {
-            Console.WriteLine("Server is not connected");
+         if (!CanProcessPlan()) {
             return;
          }
 
-         var ok = Client.Pause();
-
-         if (ok) {
+         if (Client.Pause()) {
             Console.WriteLine("Pause request sent to serverd");
          }
       }
 
       /// <summary>
-      /// Exit application
+      ///    Exit application
       /// </summary>
       private void Quit()
       {
@@ -493,21 +551,37 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void SendDataBtn_Click(object sender, EventArgs e)
       {
-         if (!IsConnected) {
-            Console.WriteLine("Server is not connected");
+         if (!IsConnected || !IsServerReady) {
+            Console.WriteLine("Server is not ready or not connected");
             return;
          }
 
-         if (IsProcessing) {
+         if (IsPlanProcessing) {
             Console.WriteLine("Plan processing is ON");
             return;
          }
 
-         var ok = Client.Send(PlanData, 10);
+         if (!PlanLoaded || PlanData.Count == 0) {
+            Console.WriteLine("Plan not loaded");
+            return;
+         }
 
-         if (ok) {
+         IsPlanSent = Client.Send(PlanData);
+
+         if (IsPlanSent) {
             Console.WriteLine("Plan data sent to server.");
          }
+      }
+
+      /// <summary>
+      /// 
+      /// </summary>
+      private void SetConsoleOutput()
+      {
+         fConsoleWriter = new ConsoleWriter();
+         fConsoleWriter.WriteEvent += OnConsoleWrite;
+         fConsoleWriter.WriteLineEvent += OnConsoleWriteLine;
+         Console.SetOut(fConsoleWriter);
       }
 
       /// <summary>
@@ -517,13 +591,11 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void StartPlanBtn_Click(object sender, EventArgs e)
       {
-         if (!IsConnected) {
-            Console.WriteLine("Server is not connected");
+         if (!CanProcessPlan()) {
             return;
          }
 
-         var ok = Client.Start();
-         if (ok) {
+         if (Client.Start()) {
             Console.WriteLine("Start request sent to server");
          }
       }
@@ -535,14 +607,11 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void StopPlanBtn_Click(object sender, EventArgs e)
       {
-         if (!IsConnected) {
-            Console.WriteLine("Server is not connected");
+         if (!CanProcessPlan()) {
             return;
          }
 
-         var ok = Client.Stop();
-
-         if (ok) {
+         if (Client.Stop()) {
             Console.WriteLine("Stop request sent to server");
          }
       }
