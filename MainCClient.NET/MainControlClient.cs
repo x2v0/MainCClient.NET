@@ -40,11 +40,6 @@ namespace MainCClient.NET
       public string IPaddress;
 
       /// <summary>
-      ///    The plan data
-      /// </summary>
-      public List<Spot> PlanData;
-
-      /// <summary>
       ///    The plan file
       /// </summary>
       public string PlanFile;
@@ -76,56 +71,25 @@ namespace MainCClient.NET
       /// <summary>
       /// True if server is connected
       /// </summary>
-      public bool IsConnected
+      public bool IsReady()
       {
-         get
-         {
-            return (Client != null) && Client.IsConnected;
+         var ret = (Client != null) && Client.IsConnected && Client.IsReady;
+         var msg = ru ? "Сервер не готов или не подключен" :
+                      "Server is not ready or not connected";
+         if (!ret) {
+            Console.WriteLine(msg);
          }
+
+         return ret;
       }
 
       /// <summary>
-      ///  True if plan processing is finished
-      /// </summary>
-      public bool IsPlanFinished
-      {
-         get
-         {
-            return (Client != null) && 
-                   (Client.SpotsTotal == Client.SpotsPassed) && 
-                   (Client.SpotsPassed > 0);
-         }
-      }
-
-      /// <summary>
-      /// True if plan data sent to server
+      /// True - plan data sent to server
       /// </summary>
       public bool IsPlanSent
       {
          get;
          private set;
-      }
-
-      /// <summary>
-      /// True if plan processing is ON
-      /// </summary>
-      public bool IsPlanProcessing
-      {
-         get
-         {
-            return (Client != null) && 
-                   (Client.SpotsPassed < Client.SpotsTotal);
-         }
-      }
-
-      /// <summary>
-      ///    Gets or sets a value indicating whether [plan loaded].
-      /// </summary>
-      /// <value><c>true</c> if [plan loaded]; otherwise, <c>false</c>.</value>
-      public bool PlanLoaded
-      {
-         get;
-         set;
       }
 
       /// <summary>
@@ -137,6 +101,7 @@ namespace MainCClient.NET
             return Program.Language == "ru";
          }
       }
+
       #endregion
 
       #region Public methods
@@ -191,22 +156,21 @@ namespace MainCClient.NET
       {
          var msg = ru ? "Сервер не готов или не подключен" : 
                         "Server is not ready or not connected";
-         if (!IsConnected || !IsServerReady) {
+         if (!Client.IsReady) {
             Console.WriteLine(msg);
             return false;
          }
 
          msg = ru ? "План не загружен на сервер" : 
                     "Plan is not loaded to the server";
-         if (!PlanLoaded ||
-             !IsPlanSent) {
+         if (!Client.IsPlanLoaded || !IsPlanSent) {
             Console.WriteLine(msg);
             return false;
          }
 
          msg = ru ? "Исполнение плана завершено" : 
                     "Plan processing is finished";
-         if (IsPlanFinished) {
+         if (Client.IsFinished) {
             Console.WriteLine(msg);
             return false;
          }
@@ -231,34 +195,9 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void ClearPlanBtn_Click(object sender, EventArgs e)
       {
-         var msg = ru ? "Сервер не готов или не подключен" : 
-                        "Server is not ready or not connected";
-         if (!IsConnected || !IsServerReady) {
-            Console.WriteLine(msg);
-            return;
-         }
-
-         msg = ru ? "План не загружен на сервер" : 
-                    "Plan is not loaded to the server";
-         if (!PlanLoaded ||
-             !IsPlanSent) {
-            Console.WriteLine(msg);
-            return;
-         }
-
-         msg = ru ? "Ошибка очистки плана на сервере" : 
-                    "Failed to clear plan on server";
-         if (!Client.Clear()) {
-            Console.WriteLine(msg);
-            return;
-         }
-
-         msg = ru ? "Запрос на очистку плана послан на сервер" : 
-                    "Clear request sent to server";
-         Console.WriteLine(msg);
-         IsPlanSent = false;
          TableGrid.Rows.Clear();
-         PlanLoaded = false;
+         Client.Clear();
+         IsPlanSent = false;
       }
 
       /// <summary>
@@ -269,10 +208,11 @@ namespace MainCClient.NET
       private void ConnectBtn_Click(object sender, EventArgs e)
       {
          var msg = ru ? "Соединиться" : "Connect";
-         if (IsConnected) {
+
+         if (Client.IsConnected) {
             Client.Disconnect();
             LedConnect.ImageIndex = 0;
-            ConnectBtn.Text = msg;
+            ConnectBtn.Invk(t => t.Text = msg);
             return;
          }
 
@@ -285,15 +225,13 @@ namespace MainCClient.NET
          }
 
          Client.Connect(IPaddress, Port);
-         msg = ru ? "Сервер = " + IPaddress + " Порт = " + Port : 
-                    "Server = " + IPaddress + " Port = " + Port;
 
-         if (IsConnected) {
+         if (Client.IsConnected) {
             LedConnect.ImageIndex = 1;
-            ConnectBtn.Text = ru ? "Отсоединиться" : "Disconnect";
+            ConnectBtn.Invk(t => t.Text = ru ? "Отсоединиться" : "Disconnect");
 
             Client.SendInfo("I'm test client for MainC");
-            Client.SendCommand(EPlanCommand.GETSTATE);
+            Client.AskServerState();
             msg += ru ? " - соединение успешно" : " is connected";
             Console.WriteLine(msg);
          } else {
@@ -334,14 +272,6 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void GetStateBtn_Click(object sender, EventArgs e)
       {
-         if (!IsConnected) {
-            Console.WriteLine(ru ? "Нет соединения с сервером" : 
-                                   "Server is not connected");
-            return;
-         }
-
-         Console.WriteLine(ru ? "Запрос о статусе послан на сервер" : 
-                                "Request for status sent to server");
          Client.AskServerState();
       }
 
@@ -352,10 +282,12 @@ namespace MainCClient.NET
       {
          SetConsoleOutput();
          Client = new PlanClient();
+         IsPlanSent = false;
 
          Client.ServerStateChanged += OnStateChanged;
          Client.ServerDisconnected += OnDisconnected;
          Client.PlanResultsProcessed += UpdatePlanTable;
+         Globals.Debug = true;
       }
 
       /// <summary>
@@ -376,16 +308,12 @@ namespace MainCClient.NET
          PlanFile = fd.FileName;
 
          try {
-            PlanData = Client.Load(PlanFile);
+            Client.Load(PlanFile);
          } catch {
-            PlanLoaded = false;
             return;
          }
 
-         PlanLoaded = true;
-         ShowPlan(PlanData);
-         Console.WriteLine(ru ? "План загружен. Число выстрелов = " : 
-                                "Plan loaded. Entries = " + PlanData.Count);
+         ShowPlan(Client.Plan);
       }
 
       /// <summary>
@@ -425,9 +353,6 @@ namespace MainCClient.NET
       /// </summary>
       private void OnDisconnected()
       {
-         Console.WriteLine(ru ? "Отсоединение с сервером " + IPaddress + ":" + Port : 
-                                "Disconnected from " + IPaddress + ":" + Port);
-
          if (InvokeRequired) {
             Invoke((MethodInvoker) Reset);
          } else {
@@ -481,7 +406,6 @@ namespace MainCClient.NET
                LedProcess.ImageIndex = 0;
                LedPause.ImageIndex = 0;
                LedFinish.ImageIndex = 0;
-               IsServerReady = false;
                break;
             case EPlanState.READY:
                LedReady.ImageIndex = 2;
@@ -490,7 +414,6 @@ namespace MainCClient.NET
                LedPause.ImageIndex = 0;
                LedFinish.ImageIndex = 0;
                LedReady.ImageIndex = 1;
-               IsServerReady = true;
                break;
             case EPlanState.INPROCESS:
                LedReady.ImageIndex = 0;
@@ -504,7 +427,6 @@ namespace MainCClient.NET
                LedProcess.ImageIndex = 0;
                LedPause.ImageIndex = 0;
                LedPause.ImageIndex = 1;
-               IsPlanPaused = true;
                break;
             case EPlanState.FINISHED:
                LedReady.ImageIndex = 0;
@@ -513,24 +435,6 @@ namespace MainCClient.NET
                LedFinish.ImageIndex = 1;
                break;
          }
-      }
-
-      /// <summary>
-      ///  true if plan is paused
-      /// </summary>
-      public bool IsPlanPaused
-      {
-         get;
-         private set;
-      }
-
-      /// <summary>
-      ///  true if server is ready
-      /// </summary>
-      public bool IsServerReady
-      {
-         get;
-         private set;
       }
 
       /// <summary>
@@ -544,10 +448,7 @@ namespace MainCClient.NET
             return;
          }
 
-         if (Client.Pause()) {
-            Console.WriteLine(ru ? "Запрос на паузу послан на сервер" : 
-                                   "Pause request sent to serverd");
-         }
+         Client.Pause();
       }
 
       /// <summary>
@@ -585,30 +486,19 @@ namespace MainCClient.NET
       /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
       private void SendDataBtn_Click(object sender, EventArgs e)
       {
-         var msg = ru ? "Сервер не готов или не подключен" : "Server is not ready or not connected";
-         if (!IsConnected || !IsServerReady) {
+         var msg = ru ? "План не загружен" : "Plan not loaded";
+         if (!Client.IsPlanLoaded) {
             Console.WriteLine(msg);
             return;
          }
 
          msg = ru ? "План в процессе выполнения" : "Plan processing is ON";
-         if (IsPlanProcessing) {
+         if (Client.IsProcessing) {
             Console.WriteLine(msg);
             return;
          }
 
-         msg = ru ? "План не загружен" : "Plan not loaded";
-         if (!PlanLoaded || PlanData.Count == 0) {
-            Console.WriteLine(msg);
-            return;
-         }
-
-         IsPlanSent = Client.Send(PlanData);
-
-         msg = ru ? "План загружен на сервер" : "Plan data sent to server";
-         if (IsPlanSent) {
-            Console.WriteLine(msg);
-         }
+         IsPlanSent = Client.Send();
       }
 
       /// <summary>
@@ -633,10 +523,7 @@ namespace MainCClient.NET
             return;
          }
 
-         if (Client.Start()) {
-            var msg = ru ? "Запрос на старт плана послан на сервер" : "Start request sent to server";
-            Console.WriteLine(msg);
-         }
+         Client.Start();
       }
 
       /// <summary>
@@ -650,10 +537,7 @@ namespace MainCClient.NET
             return;
          }
 
-         if (Client.Stop()) {
-            var msg = ru ? "Запрос на остановку плана послан на сервер" : "Stop request sent to server";
-            Console.WriteLine(msg);
-         }
+         Client.Stop();
       }
 
       /// <summary>
