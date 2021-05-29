@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Reactive.Linq;
 using System.Windows.Forms;
 using TM;
 using TMPlan;
@@ -69,22 +70,7 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      /// True if server is connected
-      /// </summary>
-      public bool IsReady()
-      {
-         var ret = (Client != null) && Client.IsConnected && Client.IsReady;
-         var msg = ru ? "Сервер не готов или не подключен" :
-                      "Server is not ready or not connected";
-         if (!ret) {
-            Console.WriteLine(msg);
-         }
-
-         return ret;
-      }
-
-      /// <summary>
-      /// True - plan data sent to server
+      ///    True - plan data sent to server
       /// </summary>
       public bool IsPlanSent
       {
@@ -93,11 +79,12 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      ///   true - if language is Russian set in app.config 
+      ///    true - if language is Russian set in app.config
       /// </summary>
-      public bool ru 
+      public bool ru
       {
-         get {
+         get
+         {
             return Program.Language == "ru";
          }
       }
@@ -107,6 +94,20 @@ namespace MainCClient.NET
       #region Public methods
 
       /// <summary>
+      ///    True if server is connected
+      /// </summary>
+      public bool IsReady()
+      {
+         var ret = (Client != null) && Client.IsConnected && Client.IsReady;
+         var msg = ru ? "Сервер не готов или не подключен" : "Server is not ready or not connected";
+         if (!ret) {
+            Console.WriteLine(msg);
+         }
+
+         return ret;
+      }
+
+      /// <summary>
       ///    Shows the plan.
       /// </summary>
       /// <param name="plan">The plan.</param>
@@ -114,9 +115,12 @@ namespace MainCClient.NET
       {
          try {
             foreach (var spot in plan) {
-               var row = new[] {spot.id.ToString(), spot.xangle.ToString(), 
-                                spot.zangle.ToString(), spot.energy.ToString(), 
-                                spot.pcount.ToString(), "", "0", "0", "0"};
+               var row = new[]
+               {
+                  spot.id.ToString(), spot.xangle.ToString(),
+                  spot.zangle.ToString(), spot.energy.ToString(),
+                  spot.pcount.ToString(), "", "0", "0", "0"
+               };
                TableGrid.Rows.Add(row);
             }
          } catch {
@@ -154,22 +158,19 @@ namespace MainCClient.NET
       /// <returns></returns>
       private bool CanProcessPlan()
       {
-         var msg = ru ? "Сервер не подключен" :
-                  "Server is not connected";
+         var msg = ru ? "Сервер не подключен" : "Server is not connected";
          if (!Client.IsConnected) {
             Console.WriteLine(msg);
             return false;
          }
 
-         msg = ru ? "План не загружен на сервер" : 
-                    "Plan is not loaded to the server";
+         msg = ru ? "План не загружен на сервер" : "Plan is not loaded to the server";
          if (!Client.IsPlanLoaded || !IsPlanSent) {
             Console.WriteLine(msg);
             return false;
          }
 
-         msg = ru ? "Исполнение плана завершено" : 
-                    "Plan processing is finished";
+         msg = ru ? "Исполнение плана завершено" : "Plan processing is finished";
          if (Client.IsFinished) {
             Console.WriteLine(msg);
             return false;
@@ -237,8 +238,7 @@ namespace MainCClient.NET
          } else {
             msg += " не доступен";
             Console.WriteLine(msg);
-            MessageBox.Show(msg, ru ? "Предупреждение" : "Warning", 
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(msg, ru ? "Предупреждение" : "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
          }
       }
 
@@ -253,8 +253,7 @@ namespace MainCClient.NET
          var rowIndex = -1;
 
          foreach (DataGridViewRow row in rows) {
-            if ((row.Cells[0].Value == null) ||
-                !row.Cells[0].Value.ToString().Equals(id.ToString())) {
+            if ((row.Cells[0].Value == null) || !row.Cells[0].Value.ToString().Equals(id.ToString())) {
                continue;
             }
 
@@ -375,10 +374,35 @@ namespace MainCClient.NET
             decimal val;
             PortNum.Value = decimal.TryParse(setting, out val) ? val : Globals.Port;
          }
+
+         // test double click
+         var mouseDown = Observable.FromEventPattern<MouseEventArgs>(MessagesLB, "MouseDown");
+         var rect = MessagesLB.ClientRectangle;
+
+         var pattern = new[] {1, 2, 1};
+         var triple = pattern.ToObservable();
+         var src = new[] {1, 1, 2, 1, 1, 4, 4, 1, 2, 1, 4, 4, 1, 2, 1, 32, 2, 3, 3, 1, 2, 1, 3, 3, 4};
+         var li = src.PatternAt(pattern);
+
+         var clicks = (from mouse in mouseDown 
+                       select new {mouse.EventArgs.X, mouse.EventArgs.Y, mouse.EventArgs.Clicks}).
+                      TimeInterval().
+                      Where(ev => (ev.Interval.TotalMilliseconds < 510) &&
+                                  rect.Contains(ev.Value.X, ev.Value.Y));
+
+         var tt = (from click in clicks select click.Value.Clicks).SequenceEqual(pattern);
+         clicks.Subscribe(ev =>
+         {
+            //Console.WriteLine("Triple click: X={0}, Y={1}", ev.Value.X, ev.Value.Y);
+            if (ev.Value.Clicks == 1)
+            { //Triple click
+               MessagesLB.Items.Clear();
+            }
+         });
       }
 
       /// <summary>
-      ///  Quit the program
+      ///    Quit the program
       /// </summary>
       /// <param name="sender"></param>
       /// <param name="e"></param>
@@ -502,7 +526,7 @@ namespace MainCClient.NET
       }
 
       /// <summary>
-      ///  Re-translate Console.Write, Console.WriteLine output to Log window
+      ///    Re-translate Console.Write, Console.WriteLine output to Log window
       /// </summary>
       private void SetConsoleOutput()
       {

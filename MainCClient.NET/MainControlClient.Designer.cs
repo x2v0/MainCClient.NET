@@ -111,7 +111,7 @@
          // 
          // MessagesLB
          // 
-         this.MessagesLB.BackColor = System.Drawing.Color.WhiteSmoke;
+         this.MessagesLB.BackColor = System.Drawing.SystemColors.Info;
          resources.ApplyResources(this.MessagesLB, "MessagesLB");
          this.MessagesLB.FormattingEnabled = true;
          this.MessagesLB.Name = "MessagesLB";

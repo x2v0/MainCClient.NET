@@ -329,41 +329,41 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABs
-        CQAAAk1TRnQBSQFMAgEBBgEAAbwBAQG8AQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/ASoB1AGUAf8BKQHSAZEB/wEqAdQBlAH/
-        AYIB1QGvAf8sAAHwAdEBkwL/AcwBQgL/AcwBQgL/AcwBQgH/AfAB0QGTAf+oAAGCAdUBrwH/AS4B6QGq
-        Af8BPAH/AewB/wE9Af8B8QH/ATwB/wHsAf8BLgHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAV4D/wHU
-        A/8B3AP/AdQC/wHiAV4B/wHwAdEBkwH/pAABKgHUAZQB/wE7Af8B5AH/ATsB/wHkAf8BOwH/AeQB/wE7
-        Af8B5AH/ATsB/wHkAf8BKgHUAZQB/yQAAf8BzgFEA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAUQB/6QA
-        ASkB0gGRAf8BhAH/AfgB/wE4Af8B1gH/ATgB/wHWAf8BOAH/AdYB/wGEAf8B+AH/ASkB0gGRAf8kAAH/
-        AcwBQgP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAFCAf+kAAEpAdIBkQH/AcwD/wFaAf8B6gH/
-        AVEB/wHjAf8BWgH/AeoB/wHMA/8BKQHSAZEB/yQAAf8BzAFCA/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
-        AcwBQgH/pAABkwHmAcAB/wFAAe8BswH/AdsD/wHiA/8B2wP/AUAB7wGzAf8BkwHmAcAB/yQAAf8B4wGk
-        Av8B4gFeA/8B5QP/AekD/wHlAv8B4AFbAv8B4wGkAf+oAAGTAeYBwAH/ASkB0gGRAf8BKQHSAY8B/wEp
-        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBQgL/AcwBQgL/AcwBQgL/AeMBpAH//wD/AP8A/wD/AP8A
+        CQAAAk1TRnQBSQFMAgEBBgEAAcQBAQHEAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wAvAAGCAdUBrwH/ASkB1AGUAf8BKAHSAZEB/wEpAdQBlAH/
+        AYIB1QGvAf8sAAHwAdEBkwL/AcwBQQL/AcwBQQL/AcwBQQH/AfAB0QGTAf+oAAGCAdUBrwH/AS0B6QGq
+        Af8BOwH/AewB/wE8Af8B8QH/ATsB/wHsAf8BLQHpAaoB/wGCAdUBrwH/JAAB8AHRAZMC/wHiAV0D/wHU
+        A/8B3AP/AdQC/wHiAV0B/wHwAdEBkwH/pAABKQHUAZQB/wE6Af8B5AH/AToB/wHkAf8BOgH/AeQB/wE6
+        Af8B5AH/AToB/wHkAf8BKQHUAZQB/yQAAf8BzgFDA/8BtgP/AbYD/wG2A/8BtgP/AbYC/wHOAUMB/6QA
+        ASgB0gGRAf8BhAH/AfgB/wE3Af8B1gH/ATcB/wHWAf8BNwH/AdYB/wGEAf8B+AH/ASgB0gGRAf8kAAH/
+        AcwBQQP/AcEC/wH8AZcC/wH8AZcC/wH8AZcD/wHBAv8BzAFBAf+kAAEoAdIBkQH/AcwD/wFZAf8B6gH/
+        AVAB/wHjAf8BWQH/AeoB/wHMA/8BKAHSAZEB/yQAAf8BzAFBA/8B5QP/AaAC/wH8AZcD/wGgA/8B5QL/
+        AcwBQQH/pAABkwHmAcAB/wE/Ae8BswH/AdsD/wHiA/8B2wP/AT8B7wGzAf8BkwHmAcAB/yQAAf8B4wGk
+        Av8B4gFdA/8B5QP/AekD/wHlAv8B4AFaAv8B4wGkAf+oAAGTAeYBwAH/ASgB0gGRAf8BKAHSAY8B/wEo
+        AdIBkQH/AZMB5gHAAf8sAAH/AeMBpAL/AcwBQQL/AcwBQQL/AcwBQQL/AeMBpAH//wD/AP8A/wD/AP8A
         /wD/ALQAAxYBHgMjATMDIwEzAyMBMwMWAR4sAAMWAR4DIwEzAyMBMwMjATMDFgEeLAADFgEeAyMBMwMj
-        ATMDIwEzAxYBHmgAAxYBHgNUAawBFAErAcsB/wETASoBygH/ARQBKwHLAf8DVAGsAxYBHiQAAxYBHgFT
-        AlQBrAEAAYoBKgH/AQABiQEpAf8BAAGKASoB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQAB/wG2
+        ATMDIwEzAxYBHmgAAxYBHgNUAawBEwEqAcsB/wESASkBygH/ARMBKgHLAf8DVAGsAxYBHiQAAxYBHgFT
+        AlQBrAEAAYoBKQH/AQABiQEoAf8BAAGKASkB/wFTAlQBrAMWAR4kAAMWAR4CVAFTAawBtwGDAQAB/wG2
         AYIBAAH/AbcBgwEAAf8CVAFTAawDFgEeKAABtAG+Av8BkQGgAv8BkQGgAv8BkQGgAv8BtAG+Av8oAANU
-        AawBIgE6AdkB/wFPAYgC/wFTAYwC/wFPAYgC/wEiAToB2QH/A1QBrCQAAVMCVAGsAQABmwE8Af8BAAHO
-        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbATwB/wFTAlQBrCQAAlQBUwGsAcUBkgEPAf8B7QHAAVQB/wHx
-        AcQBWgH/Ae0BwAFUAf8BxQGSAQ8B/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
-        AZIBqAL/AbQBvgL/JAABFQErAcsB/wE/AVwC/wFAAVwC/wE/AVsB/QH/AUABXAL/AT8BXAL/ARUBKwHL
-        Af8lAAGKASoB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKASoB/yQA
-        AbcBhAEAAf8B6gG0ATwB/wHpAbQBPAH/AegBswE7Af8B6QG0ATwB/wHqAbQBPAH/AbcBhAEAAf8kAAGR
-        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAARMBKgHLAf8BTQGIAv8BLQFN
-        AfsB/wEtAU0B+gH/AS0BTQH7Af8BTQGIAv8BEwEqAcsB/yUAAYkBKAH/AQUBzwGZAf8BAAHAAV8B/wEA
-        Ab4BXgH/AQABwAFfAf8BBQHPAZkB/wEAAYkBKAH/JAABtwGCAQAB/wHrAbkBRAH/AeMBpgEhAf8B4wGm
-        ASEB/wHjAaYBIQH/AesBuQFEAf8BtwGCAQAB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
-        AaUBvQL/AZEBoAL/JAABEwEqAcwB/wGQAaUB/QH/AToBWQH6Af8BNQFTAfkB/wE6AVkB+gH/AZABpQH9
-        Af8BEwEqAcwB/yUAAYoBKQH/AUYB2gG0Af8BAAHGAY4B/wEAAcMBiAH/AQABxgGOAf8BRgHaAbQB/wEA
-        AYoBKQH/JAABtwGDAQAB/wHuAcYBhAH/AeUBqgEpAf8B4gGmASEB/wHlAaoBKQH/Ae4BxgGEAf8BtwGD
-        AQAB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXASUBPQHb
-        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ASQBPQHbAf8DTwGXJAABTgJPAZcBAAGfAUMB/wFUAdoBtwH/
-        AVoB3gG9Af8BVAHaAbcB/wEAAZ8BQwH/AU4CTwGXJAACTwFOAZcBxgGSAQ4B/wHsAcQBggH/Ae8ByAGG
-        Af8B7AHEAYIB/wHGAZEBDAH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
-        Av8BvQHHAv8oAANPAZcBEgEpAcwB/wERASgBywH/ARIBKQHMAf8DTwGXLAABTgJPAZcBAAGKASgB/wEA
-        AYkBJgH/AQABigEoAf8BTgJPAZcsAAJPAU4BlwG3AYMBAAH/AbYBggEAAf8BtwGDAQAB/wJPAU4BlywA
+        AawBIQE5AdkB/wFOAYgC/wFSAYwC/wFOAYgC/wEhATkB2QH/A1QBrCQAAVMCVAGsAQABmwE7Af8BAAHO
+        AZAB/wEAAdEBlAH/AQABzgGQAf8BAAGbATsB/wFTAlQBrCQAAlQBUwGsAcUBkgEOAf8B7QHAAVMB/wHx
+        AcQBWQH/Ae0BwAFTAf8BxQGSAQ4B/wJUAVMBrCQAAbQBvgL/AZIBqAL/AacBvQL/AakBvwL/AacBvQL/
+        AZIBqAL/AbQBvgL/JAABFAEqAcsB/wE+AVsC/wE/AVsC/wE+AVoB/QH/AT8BWwL/AT4BWwL/ARQBKgHL
+        Af8lAAGKASkB/wEAAccBiQH/AQAByAGKAf8BAAHGAYkB/wEAAcgBigH/AQABxwGJAf8BAAGKASkB/yQA
+        AbcBhAEAAf8B6gG0ATsB/wHpAbQBOwH/AegBswE6Af8B6QG0ATsB/wHqAbQBOwH/AbcBhAEAAf8kAAGR
+        AaAC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGdAbYC/wGRAaAC/yQAARIBKQHLAf8BTAGIAv8BLAFM
+        AfsB/wEsAUwB+gH/ASwBTAH7Af8BTAGIAv8BEgEpAcsB/yUAAYkBJwH/AQQBzwGZAf8BAAHAAV4B/wEA
+        Ab4BXQH/AQABwAFeAf8BBAHPAZkB/wEAAYkBJwH/JAABtwGCAQAB/wHrAbkBQwH/AeMBpgEgAf8B4wGm
+        ASAB/wHjAaYBIAH/AesBuQFDAf8BtwGCAQAB/yQAAZEBoAL/AaUBvQL/AZIBrwL/AZIBrwL/AZIBrwL/
+        AaUBvQL/AZEBoAL/JAABEgEpAcwB/wGQAaUB/QH/ATkBWAH6Af8BNAFSAfkB/wE5AVgB+gH/AZABpQH9
+        Af8BEgEpAcwB/yUAAYoBKAH/AUUB2gG0Af8BAAHGAY4B/wEAAcMBiAH/AQABxgGOAf8BRQHaAbQB/wEA
+        AYoBKAH/JAABtwGDAQAB/wHuAcYBhAH/AeUBqgEoAf8B4gGmASAB/wHlAaoBKAH/Ae4BxgGEAf8BtwGD
+        AQAB/yQAAZEBoAL/AbsBzgL/AZkBtQL/AZcBsgL/AZkBtQL/AbsBzgL/AZEBoAL/JAADTwGXASQBPAHb
+        Af8BkAGmAfwB/wGVAawC/wGQAaYB/AH/ASMBPAHbAf8DTwGXJAABTgJPAZcBAAGfAUIB/wFTAdoBtwH/
+        AVkB3gG9Af8BUwHaAbcB/wEAAZ8BQgH/AU4CTwGXJAACTwFOAZcBxgGSAQ0B/wHsAcQBggH/Ae8ByAGG
+        Af8B7AHEAYIB/wHGAZEBCwH/Ak8BTgGXJAABvQHHAv8BlAGqAv8BugHOAv8BvAHRAv8BugHOAv8BkwGq
+        Av8BvQHHAv8oAANPAZcBEQEoAcwB/wEQAScBywH/AREBKAHMAf8DTwGXLAABTgJPAZcBAAGKAScB/wEA
+        AYkBJQH/AQABigEnAf8BTgJPAZcsAAJPAU4BlwG3AYMBAAH/AbYBggEAAf8BtwGDAQAB/wJPAU4BlywA
         Ab0BxwL/AZEBoAL/AZEBoAL/AZEBoAL/Ab0BxwL//wD/AP8A/wAYAAFCAU0BPgcAAT4DAAEoAwABQAMA
         ASADAAEBAQABAQYAAQEWAAP/AQAE/wQABP8EAAT/BAAE/wQABP8EAAH8AR8B/AEfBAAB+AEPAfgBDwQA
         AfgBDwH4AQ8EAAH4AQ8B+AEPBAAB+AEPAfgBDwQAAfgBDwH4AQ8EAAH8AR8B/AEfBAAE/wQABP8EAAT/
@@ -519,6 +519,54 @@
   <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Xangle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Yangle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Emev.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Intensity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Result.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ResultX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ResultZ.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ResultIntensity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="TableGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 57</value>
+  </data>
+  <data name="TableGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 352</value>
+  </data>
+  <data name="TableGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;TableGrid.Name" xml:space="preserve">
+    <value>TableGrid</value>
+  </data>
+  <data name="&gt;&gt;TableGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableGrid.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TableGrid.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Id.HeaderText" xml:space="preserve">
     <value>Id</value>
   </data>
@@ -596,27 +644,6 @@
   </data>
   <data name="ResultIntensity.Width" type="System.Int32, mscorlib">
     <value>90</value>
-  </data>
-  <data name="TableGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 57</value>
-  </data>
-  <data name="TableGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>744, 352</value>
-  </data>
-  <data name="TableGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="&gt;&gt;TableGrid.Name" xml:space="preserve">
-    <value>TableGrid</value>
-  </data>
-  <data name="&gt;&gt;TableGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableGrid.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TableGrid.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="ClearLogBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>754, 420</value>
